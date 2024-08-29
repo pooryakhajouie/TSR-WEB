@@ -1,0 +1,51 @@
+.source-code-page {
+    padding: 20px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .source-code-page h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333; 
+  }
+  
+  .source-code-page p {
+    font-size: 1.2em;
+    color: #555; 
+    margin-bottom: 20px;
+  }
+  
+  .images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .tech-image {
+    max-width: 100%; 
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.2s;
+  }
+  
+  .tech-image:hover {
+    transform: scale(1.1);
+  }
+  
+  .source-code-page a {
+    color: #007bff; 
+    text-decoration: none; 
+    font-weight: bold;
+  }
+  
+  .source-code-page a:hover {
+    text-decoration: underline; 
+  }
+  

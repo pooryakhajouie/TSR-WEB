@@ -1,0 +1,68 @@
+.problems-page {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+  }
+  
+  .future-enhancement {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .future-enhancement h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .future-enhancement p {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .problem-form h1,
+  .problem-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .problem-form textarea,
+  .problem-form input[type="email"],
+  .problem-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .problem-form textarea {
+    height: 150px;
+  }
+  
+  .problem-form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .problem-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  

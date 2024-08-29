@@ -1,0 +1,27 @@
+.community-page {
+  padding: 20px;
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.community-page h1 {
+  align-self: flex-start;
+}
+
+.community-images {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px; 
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.community-image {
+  max-width: 100%; 
+  height: 200px; 
+  border-radius: 8px;
+  object-fit: cover; 
+}

@@ -1,0 +1,33 @@
+.people-page {
+  padding: 20px;
+}
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.person {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.person-image {
+  width: 150px;
+  height: 200px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.person-details {
+  flex-direction: column;
+}
+
+.person-role {
+  font-weight: bold;
+}
