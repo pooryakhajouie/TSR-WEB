@@ -16,7 +16,9 @@
   }
   
   .header-logo {
-    padding: 0;
-    height: 70px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 80px;
     width: 200px;
   }

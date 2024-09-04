@@ -13,6 +13,7 @@ import People from './footer/People';
 import Community from './footer/Community';
 import Sourcecode from './footer/SourceCode';
 import Problems from './footer/Problems';
+import Home from './components/Home'
 import './App.css';
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
         <Header setActiveTab={setActiveTab} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<TSR />} />
+            <Route path="/" element={<Home />} />
             <Route path="/people" element={<People />} />
             <Route path="/community" element={<Community />} />
             <Route path="/source-code" element={<Sourcecode />} />

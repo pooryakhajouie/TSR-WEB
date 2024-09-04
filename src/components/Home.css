@@ -1,0 +1,150 @@
+/* Home.css */
+
+.home {
+    font-family: Arial, sans-serif;
+    width:100%;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-color: #004080;
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Adjust height based on your design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    z-index: 2;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Optional: overlay to improve text visibility */
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-button {
+    background-color: #ff6347; /* Example color, adjust as needed */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4500; /* Darken on hover */
+  }
+  
+
+  /* Introduction Section */
+.intro-section {
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #333; /* Darker text color for readability */
+  }
+  
+  .intro-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Reuse the CTA Button Style */
+  .cta-button {
+    background-color: #ff6347; /* Same color as Hero Section */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4500; /* Darken on hover */
+  }
+
+  /* TSR-Based Method Overview Section */
+.tsr-method-section {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .tsr-method-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+  }
+  
+  .tsr-method-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .tsr-method-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  /* Placeholder for the Illustration */
+  .tsr-illustration-placeholder {
+    width: 100%;
+    height: 300px; /* Placeholder height */
+    background-color: #f0f0f0; /* Light grey to indicate a placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc; /* Dashed border to indicate it's a placeholder */
+  }
+  
+  .tsr-illustration-placeholder p {
+    font-size: 1.2rem;
+    color: #888; /* Lighter text to indicate placeholder status */
+  }
+  
