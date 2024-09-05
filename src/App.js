@@ -14,6 +14,7 @@ import Community from './footer/Community';
 import Sourcecode from './footer/SourceCode';
 import Problems from './footer/Problems';
 import Home from './components/Home'
+import ContactUs from './components/ContactUs';
 import './App.css';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/people" element={<People />} />
             <Route path="/community" element={<Community />} />
             <Route path="/source-code" element={<Sourcecode />} />
