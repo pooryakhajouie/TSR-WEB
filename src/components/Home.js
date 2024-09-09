@@ -91,7 +91,7 @@ const Home = () => {
             </p>
             <a href="https://www.sciencedirect.com/science/article/pii/S1476927123000154" className="publication-link" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
-          <NavLink to="/contact" className="cta-button">See All Publications</NavLink>
+          <NavLink to="/publications" className="cta-button">See All Publications</NavLink>
         </div>
       </section>
 

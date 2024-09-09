@@ -15,7 +15,9 @@ import Sourcecode from './footer/SourceCode';
 import Problems from './footer/Problems';
 import Home from './components/Home'
 import ContactUs from './components/ContactUs';
+import Publications from './components/Publications';
 import './App.css';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
@@ -25,8 +27,10 @@ const App = () => {
       <div className="app-container">
         <Header setActiveTab={setActiveTab} />
         <div className="content">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/publications" element={<Publications />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/people" element={<People />} />
             <Route path="/community" element={<Community />} />

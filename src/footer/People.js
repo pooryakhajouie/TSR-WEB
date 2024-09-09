@@ -43,7 +43,7 @@ const peopleData = [
 const People = () => {
   return (
     <div className="people-page">
-      <h1>Our Team</h1>
+      <h1 className="people-heading">Our Team</h1>
       <div className="people-list">
         {peopleData.map((person, index) => (
           <div className="person" key={index}>
