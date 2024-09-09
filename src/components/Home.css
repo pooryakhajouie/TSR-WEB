@@ -273,6 +273,7 @@
   .cta-button {
     background-color: #ff6347;
     color: white;
+    margin-top: 20px;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;

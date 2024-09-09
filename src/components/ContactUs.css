@@ -1,48 +1,68 @@
 .contact-us-container {
     padding: 50px;
-    /* max-width: 800px; */
-    width: 40%;
+    /* max-width: 1200px; */
+    width: 100%;
     margin: auto;
-}
-
-.contact-form {
+  }
+  
+  .contact-us-content {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .contact-info {
+    flex: 1;
+    margin-right: 100px;
+  }
+  
+  .address-info {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .contact-form {
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 30px;
     padding-right: 60px;
-    border: 2px solid #ddd; /* Add frame around the form */
-    border-radius: 10px; /* Rounded corners for the frame */
-    background-color: #f9f9f9; /* Slight background color to make the form stand out */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-.form-group {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+  }
+  
+  .form-group {
     margin-bottom: 20px;
-}
-
-.form-group label {
+  }
+  
+  .form-group label {
     margin-bottom: 8px;
     display: block;
     font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
+  }
+  
+  .form-group input,
+  .form-group textarea {
     width: 100%;
-    padding: 15px; /* Increase padding for larger input fields */
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px; /* Larger text size for better readability */
-}
-
-.form-group textarea {
-    height: 200px; /* Increase height for the message box */
-    resize: vertical; /* Allow resizing only vertically */
-}
-
-.submit-button {
-    width: 30%; /* Fixed width for the button */
-    align-self: center; /* Center the button */
+    font-size: 16px;
+  }
+  
+  .form-group textarea {
+    height: 200px;
+    resize: vertical;
+  }
+  
+  .submit-button {
+    width: 50%;
+    align-self: center;
     background-color: #ff6347;
     color: white;
     padding: 15px 30px;
@@ -52,8 +72,21 @@
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-}
-
-.submit-button:hover {
+  }
+  
+  .submit-button:hover {
     background-color: #ff4500;
-}
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contact-us-content {
+      flex-direction: column;
+    }
+  
+    .contact-info {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+  

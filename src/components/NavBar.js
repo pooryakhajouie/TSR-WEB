@@ -44,7 +44,7 @@ const NavBar = () => {
         <NavLink to="/about">About Us</NavLink>
         <ul className="dropdown-content">
           <li><NavLink to="/people">Lab Members</NavLink></li>
-          <li><NavLink to="/about/contact-us">Contact Us</NavLink></li>
+          <li><NavLink to="/contact">Contact Us</NavLink></li>
           <li><NavLink to="/about/cite-us">Cite Us</NavLink></li>
         </ul>
       </li>

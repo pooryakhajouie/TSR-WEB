@@ -27,7 +27,9 @@ const Home = () => {
           <p>
             Our flagship research tool, the TSR-based method, leverages triangular spatial relationships to accurately model and compare protein structures. This novel approach offers significant advancements in structural biology, facilitating breakthroughs in drug discovery, molecular biology, and beyond.
           </p>
-          <button className="cta-button">Meet Our Lab Members</button>
+          <NavLink to="/people">
+            <button className="cta-button">Meet Our Lab Members</button>
+          </NavLink>
         </div>
       </section>
 
@@ -89,6 +91,7 @@ const Home = () => {
             </p>
             <a href="https://www.sciencedirect.com/science/article/pii/S1476927123000154" className="publication-link" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
+          <NavLink to="/contact" className="cta-button">See All Publications</NavLink>
         </div>
       </section>
 
