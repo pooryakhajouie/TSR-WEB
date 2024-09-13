@@ -1,25 +1,71 @@
-.main {
-    flex: 1;
-    padding: 0 20px 20px;
-  }
+/* Page layout */
+.tsr-method-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
 
+/* Table of Contents */
+.toc {
+  position: sticky;
+  top: 20px;
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toc nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc nav ul li {
+  margin-bottom: 10px;
+}
+
+.toc nav ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toc nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Content section */
 .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .text-content {
-    flex: 3;
-    justify-content: space-between;
-    padding-right: 20px;
-  }
-  
-  .image-content {
-    flex: 1;
-  }
-  
-  .image-content img {
-    max-width: 100%;
-  }
-  
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.section ol {
+  padding-left: 20px;
+  list-style: decimal;
+}
+
+/* Link styling */
+a {
+  color: #3498db;
+}
+
+a:hover {
+  text-decoration: underline;
+}

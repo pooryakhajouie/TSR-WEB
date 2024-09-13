@@ -1,34 +1,63 @@
 import React from 'react';
 import './TSR.css';
-import proteinImage from '../images/protein.png';
+// import proteinImage from '../images/protein.png';
 
 const TSR = () => {
-    return (
-        <div className="main">
-            <div className="content">
-                <div className="text-content">
-                    <h2>Triangular Spatial Relationship (TSR)</h2>
-                    <p>
-                        We have developed a novel method where the 3-D structure of a protein is modeled using the concept of Triangular
-                        Spatial Relationship (TSR), where triangles are constructed with the Cα atoms of a protein as vertices. Every triangle is
-                        represented using an integer, which we denote as “key,” A key is computed using the length, angle, and vertex labels based
-                        on a rule-based formula, which ensures assignment of the same key to identical TSRs across proteins. A structure is
-                        thereby represented by a vector of integers. Our method is able to accurately quantify similarity of structure or substructure
-                        by matching numbers of identical keys between two proteins. The uniqueness of our method includes: (i) a unique way to
-                        represent structures to avoid performing structural superimposition; (ii) use of triangles to represent substructures as it is
-                        the simplest primitive to capture shape; (iii) complex structure comparison is achieved by matching integers corresponding
-                        to multiple TSRs. Every substructure of one protein is compared to every other substructure in a different protein. The method
-                        is used in the studies of proteases and kinases because they play essential roles in cell signaling, and a majority of these
-                        constitute drug targets. The new motifs or substructures we identified specifically for proteases and kinases provide a deeper
-                        insight into their structural relations. Furthermore, the method provides a unique way to study protein conformational changes.
-                    </p>
-                </div>
-                <div className="image-content">
-                    <img src={proteinImage} alt="Protein Structure" />
-                </div>
-            </div>
-        </div>
-    );
-};
+  return (
+    <div className="tsr-method-page">
+      <aside className="toc">
+        <nav>
+          <ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#tutorial">Tutorial</a></li>
+            <li><a href="#source-code">Source Code</a></li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <div className="content">
+        <section id="abstract" className="section">
+          <h2>Abstract / Description</h2>
+          <p>
+            Understanding protein functions often hinges on comparing their 3D structures. However, developing effective methods for such comparisons remains a significant challenge. Over the past four decades, approximately 200 papers have proposed various approaches, categorizing them into sequence-based, distance-based, secondary structure-based, geometry-based, and network-based comparisons. Each method has its strengths, but also limitations.
+          </p>
+          <p>
+            We introduce a novel approach called the <strong>Triangular Spatial Relationship (TSR)</strong> method, which models a protein's 3D structure using triangles formed by Cα atoms as vertices. Each triangle is assigned a unique integer "key," calculated using its side lengths, angles, and vertex labels. This rule-based computation ensures that identical TSRs across proteins receive the same key, allowing us to represent protein structures as vectors of integers.
+          </p>
+          <p>
+            Our method offers three key advantages:
+          </p>
+          <ul>
+            <li><strong>No Structural Superimposition</strong>: By representing structures as integer vectors, we avoid the complexity of structural superimposition.</li>
+            <li><strong>Efficient Shape Representation</strong>: Triangles are the simplest primitives for capturing protein shape, enabling precise substructure comparisons.</li>
+            <li><strong>Comprehensive Comparison</strong>: We compare every substructure of one protein with those of another, using matching integers to identify structural similarities.</li>
+          </ul>
+          <p>
+            This method has already shown promise in analyzing proteases and kinases, proteins critical for cell signaling and drug targeting. Additionally, our analysis of CATH and SCOP datasets demonstrates the TSR method’s ability to distinguish between alpha helices and beta sheets. Looking ahead, this approach could evolve into a powerful tool for structural comparison akin to BLAST for sequence alignment.
+          </p>
+        </section>
+        
+        <section id="tutorial" className="section">
+          <h2>Tutorial</h2>
+          <p>Follow these steps to use the TSR-Based Method:</p>
+          <ol>
+            <li>Install the required dependencies</li>
+            <li>Clone the GitHub repo</li>
+            <li>Run the method with your input data</li>
+            <li>Interpret the output...</li>
+          </ol>
+        </section>
+        
+        <section id="source-code" className="section">
+          <h2>Source Code</h2>
+          <p>
+            The source code for the TSR Method is available on <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">GitHub</a>. Feel free to clone the repository and contribute!
+          </p>
+        </section>
+      </div>
+    </div>
+  );
+}
 
 export default TSR;
+

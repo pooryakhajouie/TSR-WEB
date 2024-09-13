@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Home.css';
+import illustration from '/Users/C00527662/Desktop/TSR-WEB/src/images/tsr-home.png';
 
 const Home = () => {
   return (
@@ -40,8 +41,9 @@ const Home = () => {
           <p>
             The TSR-Based Method is an innovative approach to protein structure analysis. By modeling the 3D structure of proteins using triangular spatial relationships (TSRs) among Cα atoms, we assign a unique integer "key" to each triangle. These keys are computed based on the lengths, angles, and vertex labels of the triangles, ensuring that identical TSRs across different proteins receive the same key. This method allows for accurate quantification of structural similarities between proteins by comparing the number of matching keys.
           </p>
-          <div className="tsr-illustration-placeholder">
-            <p>Illustration coming soon...</p>
+          {/* Replace placeholder with actual image */}
+          <div className="tsr-illustration">
+            <img src={illustration} alt="TSR-Based Method Illustration" />
           </div>
         </div>
       </section>
