@@ -12,8 +12,10 @@ const Home = () => {
           <h1>Innovating Protein Structure Analysis</h1>
           <p>Pioneering computational approaches to quantify structural similarities between proteins.</p>
           <div className="cta-buttons">
-            <button className="cta-button">Explore Our Methods</button>
-            <button className="cta-button">Learn More About TSR Method</button>
+            <NavLink to="/tsr">
+              <button className="cta-button">Learn More About TSR Method</button>
+            </NavLink>
+            <button className="cta-button">Explore Other TSR-Based Methods</button>
           </div>
         </div>
       </section>
@@ -37,7 +39,7 @@ const Home = () => {
       {/* TSR-Based Method Overview Section */}
       <section className="tsr-method-section">
         <div className="tsr-method-content">
-          <h2>Overview of the TSR-Based Method</h2>
+          <h2>Overview of the TSR Method</h2>
           <p>
             The TSR-Based Method is an innovative approach to protein structure analysis. By modeling the 3D structure of proteins using triangular spatial relationships (TSRs) among Cα atoms, we assign a unique integer "key" to each triangle. These keys are computed based on the lengths, angles, and vertex labels of the triangles, ensuring that identical TSRs across different proteins receive the same key. This method allows for accurate quantification of structural similarities between proteins by comparing the number of matching keys.
           </p>

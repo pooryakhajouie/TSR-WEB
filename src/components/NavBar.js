@@ -23,20 +23,27 @@ const NavBar = () => {
       <li className="dropdown">
         <NavLink to="/tsr">TSR Method</NavLink>
         <ul className="dropdown-content">
-          <li><NavLink to="/tsr/source-code">Source Code</NavLink></li>
+          {/* <li><NavLink to="/tsr/source-code">Source Code</NavLink></li>
           <li><NavLink to="/tsr/tutorial">Tutorial</NavLink></li>
-          <li><NavLink to="/tsr/abstract">Abstract</NavLink></li>
+          <li><NavLink to="/tsr/abstract">Abstract</NavLink></li> */}
         </ul>
       </li>
 
       {/* Other Methods with Dropdown */}
       <li className="dropdown">
-        <NavLink to="/other-method">Other Projects</NavLink>
+        <NavLink to="/other-method">Other TSR-Based Methods</NavLink>
         <ul className="dropdown-content">
           {/* Add items dynamically if needed */}
-          <li><NavLink to="/other-method/project1">SSE-TSR</NavLink></li>
-          <li><NavLink to="/other-method/project1">Drug Development</NavLink></li>
+          <li><NavLink to="/other-method/project1">Method 1</NavLink></li>
+          <li><NavLink to="/other-method/project1">Method 2</NavLink></li>
+          <li><NavLink to="/other-method/project1">Method 3</NavLink></li>
+          <li><NavLink to="/other-method/project1">Method 4</NavLink></li>
+          <li><NavLink to="/other-method/project1">Method 5</NavLink></li>
         </ul>
+      </li>
+
+      <li className='dropdown'>
+            <NavLink to="/publications">Our Publications</NavLink>
       </li>
 
       {/* About Us with Dropdown */}
@@ -45,7 +52,6 @@ const NavBar = () => {
         <ul className="dropdown-content">
           <li><NavLink to="/people">Lab Members</NavLink></li>
           <li><NavLink to="/contact">Contact Us</NavLink></li>
-          <li><NavLink to="/about/cite-us">Cite Us</NavLink></li>
         </ul>
       </li>
     </ul>

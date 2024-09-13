@@ -1,29 +1,3 @@
-/* .navbar {
-    padding: 10px 20;
-  }
-  
-  .navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .navbar ul li {
-    margin: 0 15px;
-  }
-  
-  .navbar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .navbar ul li a:hover {
-    text-decoration: underline;
-  } 
-   */
-
    /* Navigation Bar */
   .navbar {
     background-color: #333;
@@ -39,9 +13,10 @@
   
   .navbar-menu li {
     /* position: relative; */
-    margin: 0;
+    margin: 0 20px 0 20px;
     padding: 0;
-    width:10%;
+    /* width:10%; */
+    max-width: 300px;
   }
   
   .navbar-menu li a {

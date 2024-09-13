@@ -1,71 +1,75 @@
-/* Page layout */
+/* TSR Page Styling */
 .tsr-method-page {
   display: flex;
-  gap: 20px;
-  padding: 20px;
 }
 
-/* Table of Contents */
 .toc {
+  width: 20%;
+  padding: 20px;
   position: sticky;
-  top: 20px;
-  width: 250px;
-  background-color: #f4f4f4;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  top: 0;
+  height: 100%;
+  background-color: #f7f7f7;
 }
 
-.toc nav ul {
+.toc ul {
   list-style: none;
   padding: 0;
 }
 
-.toc nav ul li {
+.toc li {
   margin-bottom: 10px;
 }
 
-.toc nav ul li a {
-  color: #3498db;
+.toc a {
   text-decoration: none;
+  color: #3498db;
   font-weight: bold;
 }
 
-.toc nav ul li a:hover {
-  text-decoration: underline;
+.content-tsr {
+  width: 60%;
+  padding: 20px;
+  text-align: justify;
 }
 
-/* Content section */
-.content {
-  flex: 1;
-}
-
-.section {
+.section-tsr {
   margin-bottom: 50px;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #333;
+.protein-illustration {
+  display: flex;
+  flex-direction: column; /* Stack image and text in a single column */
+  align-items: center; /* Center the content horizontally */
+  gap: 20px;
+  margin: 20px 0;
 }
 
-.section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.protein-image {
+  max-width: 100%; /* Make sure the image takes up the available width */
+  /* height: auto; */
+  max-height: 500px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.protein-description {
+  width: 100%;
   color: #555;
+  /* text-align: left; */
 }
 
-.section ol {
+.protein-description h3,
+.protein-description h4 {
+  margin-bottom: 10px;
+}
+
+.protein-description ul {
   padding-left: 20px;
-  list-style: decimal;
+  list-style-type: disc;
 }
 
-/* Link styling */
-a {
-  color: #3498db;
-}
-
-a:hover {
-  text-decoration: underline;
+.protein-description ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
