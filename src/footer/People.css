@@ -1,8 +1,9 @@
 .people-page {
   padding: 50px;
-  background-color: #f9f9f9; /* Light background to contrast the card */
+  background-color: #f9f9f9;
   font-family: 'Arial', sans-serif;
   text-align: center;
+  
 }
 
 .people-heading {
@@ -11,15 +12,27 @@
   color: #333;
 }
 
+/* Flex grid layout for responsive design */
 .people-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px; /* Gap between the cards */
-  /* max-width: 1600px; */
+  gap: 30px;
   width: 100%;
-  margin: auto; /* Center the grid */
+  /* max-width: 1600px; */
+  margin: auto;
 }
 
+.former-people-list {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  /* max-width: 1600px; */
+  margin: auto;
+}
+
+/* Style for individual person card */
 .person {
   background-color: white;
   border: 1px solid #ddd;
@@ -28,34 +41,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between; /* Space between elements */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 450px; /* Ensure consistent height for all cards */
+  max-width: 400px;
 }
 
+/* Hover effect */
 .person:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+/* Image of person */
 .person-image {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* Circular images */
-  object-fit: fill;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 20px;
   border: 4px solid #f0f0f0;
 }
 
+/* Person details */
 .person-details {
   text-align: center;
+  flex-grow: 1; /* Ensures details take up remaining space in the card */
 }
 
+/* Name of person */
 .person-details h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #444;
 }
 
+/* Role of person */
 .person-role {
   font-weight: bold;
   color: #555;
@@ -63,13 +85,16 @@
   font-size: 1.1rem;
 }
 
+/* Description of person - Justified text */
 .person-details p {
   margin-bottom: 10px;
   font-size: 1rem;
   line-height: 1.6;
   color: #666;
+  text-align: justify; /* Justify text */
 }
 
+/* Email link styling */
 .person-details a {
   color: #ff6347;
   text-decoration: none;
@@ -79,6 +104,7 @@
   text-decoration: underline;
 }
 
+/* Responsive adjustments for mobile screens */
 @media (max-width: 768px) {
   .people-page {
     padding: 30px;
@@ -89,7 +115,11 @@
     gap: 10px;
   }
 
-  h1 {
+  .people-heading {
     font-size: 2rem;
+  }
+
+  .person-details p {
+    text-align: left; /* Left-align text on smaller screens for better readability */
   }
 }

@@ -295,3 +295,7 @@
     background-color: #ff4500;
   }
   
+  .cta-button a {
+    color: inherit; /* Inherit the color from the button */
+    text-decoration: none; /* Remove the underline */
+  }

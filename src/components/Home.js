@@ -15,7 +15,7 @@ const Home = () => {
             <NavLink to="/tsr">
               <button className="cta-button">Learn More About TSR Method</button>
             </NavLink>
-            <button className="cta-button">Explore Other TSR-Based Methods</button>
+            <button className="cta-button"><a href="#research-projects">Explore Other TSR-Based Methods</a></button>
           </div>
         </div>
       </section>
@@ -51,7 +51,7 @@ const Home = () => {
       </section>
 
       {/* Research Projects and Methods Section */}
-      <section className="research-projects-section">
+      <section id="research-projects" className="research-projects-section">
         <h2>Research Projects and Methods</h2>
         <p>
           Our lab is focused on developing and refining various scientific methods
@@ -59,9 +59,14 @@ const Home = () => {
           methods we're currently working on.
         </p>
         <div className="research-buttons">
-          <NavLink to="/other-method/item1" className="cta-button">SSE-TSR</NavLink>
-          <NavLink to="/other-method/item2" className="cta-button">Drug Development</NavLink>
-          {/* More buttons can be added as more methods are developed */}
+          <NavLink to="/size-filtering" className="cta-button">Size-Filtering TSR</NavLink>
+          <NavLink to="/mirror-image" className="cta-button">Mirror-Image TSR</NavLink>
+          <NavLink to="/metal-ion" className="cta-button">Metal-Ion TSR</NavLink>
+        </div>
+        <div className="research-buttons">
+          <NavLink to="/drug-tsr" className="cta-button">Drug TSR</NavLink>
+          <NavLink to="/aa-grouping" className="cta-button">AminoAcid Grouping TSR</NavLink>
+          <NavLink to="/sse-tsr" className="cta-button">SSE-TSR</NavLink>
         </div>
       </section>
 
