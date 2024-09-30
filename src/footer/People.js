@@ -47,7 +47,7 @@ const formerMembersData = [
   {
     name: 'Sarika Kondra',
     role: 'Ph.D, Computer Science, University of Louisiana at Lafayette',
-    description: 'Specialized in Deep Learning and Bioinformatics.',
+    description: 'Dr. Venkata Sarika Kondra is a Senior Data Scientist with over a decade of experience in AI and software development across industries like healthcare, finance, and e-commerce. She holds a Ph.D. in Computer Science, specializing in protein 3D structure comparisons from the University of Louisiana at Lafayette. Her expertise includes natural language processing (NLP), deep learning, and machine learning. At Deloitte, she pioneered AI innovations, such as developing the CX Analytics System for GM Financial, using large language models (LLMs) to analyze millions of customer calls, enhancing satisfaction, and cutting costs. She also led the creation of a chatbot for Allegro Microsystems, transforming customer support in the semiconductor industry. Her AI work at Pfizer achieved 95% accuracy in pharmaceutical label updates and accelerated processes by 60%. She also explored COVID-19 sound diagnostics and worked on predicting surgical complications at Smith & Nephew. Her passion lies in bridging AI and industry, delivering impactful solutions that drive business value while advancing scientific research.',
     image: sarika,
     phone: '(337) 123-4567',
     email: 'former.member1@louisiana.edu',

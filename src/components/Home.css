@@ -299,3 +299,7 @@
     color: inherit; /* Inherit the color from the button */
     text-decoration: none; /* Remove the underline */
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
