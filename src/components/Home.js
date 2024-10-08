@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Home.css';
-import illustration from '/Users/C00527662/Desktop/TSR-WEB/src/images/tsr-home.png';
+import illustration from '../images/tsr-home.png';
 
 const Home = () => {
   return (
