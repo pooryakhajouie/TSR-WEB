@@ -17,6 +17,7 @@ const NavBar = () => {
         <li className="dropdown">
           <span className="dropdown-title">Other TSR-Based Methods</span>
           <ul className="dropdown-content">
+            <li><NavLink to="/nucleotide-protein">Nucleotide-Protein TSR</NavLink></li>
             <li><NavLink to="/drug-tsr">Drug TSR</NavLink></li>
             <li><NavLink to="/mirror-image">Mirror-Image TSR</NavLink></li>
             <li><NavLink to="/metal-ion">Metal-Ion TSR</NavLink></li>
