@@ -3,17 +3,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import TSR from './tabs/TSR';
-import Proteins from './tabs/Proteins';
-import Ligands from './tabs/Ligands';
-import DrugProtein from './tabs/DrugProtein';
-import ProteinProtein from './tabs/ProteinProtein';
-// import Neudeotide from './tabs/Neudeotide';
-// import NeudeotideProtein from './tabs/NeudeotideProtein';
+import SizeFiltering from './tabs/SizeFiltering';
+import MirrorImage from './tabs/MirrorImage';
+import DrugTSR from './tabs/DrugTSR';
+import MetalIon from './tabs/MetalIon';
+import AAGrouping from './tabs/AAGrouping';
+import SSETSR from './tabs/SSETSR';
 import People from './footer/People';
 import Community from './footer/Community';
 import Sourcecode from './footer/SourceCode';
 import Problems from './footer/Problems';
+import Home from './components/Home'
+import ContactUs from './components/ContactUs';
+import Publications from './components/Publications';
 import './App.css';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
@@ -23,17 +27,22 @@ const App = () => {
       <div className="app-container">
         <Header setActiveTab={setActiveTab} />
         <div className="content">
+          <ScrollToTop />
           <Routes>
-            <Route path="/" element={<TSR />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/publications" element={<Publications />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/people" element={<People />} />
             <Route path="/community" element={<Community />} />
             <Route path="/source-code" element={<Sourcecode />} />
             <Route path="/problems" element={<Problems />} />
             <Route path="/tsr" element={<TSR />} />
-            <Route path="/proteins" element={<Proteins />} />
-            <Route path="/ligands" element={<Ligands />} />
-            <Route path="/drug-protein" element={<DrugProtein />} />
-            <Route path="/protein-protein" element={<ProteinProtein />} />
+            <Route path="/size-filtering" element={<SizeFiltering />} />
+            <Route path="/mirror-image" element={<MirrorImage />} />
+            <Route path="/drug-tsr" element={<DrugTSR />} />
+            <Route path="/metal-ion" element={<MetalIon />} />
+            <Route path="/aa-grouping" element={<AAGrouping />} />
+            <Route path="/sse-tsr" element={<SSETSR />} /> 
             {/* <Route path="/neudeotide" element={<Neudeotide />} /> */}
             {/* <Route path="/neudeotide-protein" element={<NeudeotideProtein />} /> */}
           </Routes>
