@@ -19,11 +19,11 @@ const NavBar = () => {
           <ul className="dropdown-content">
             <li><NavLink to="/nucleotide-protein">Nucleotide-Protein TSR</NavLink></li>
             <li><NavLink to="/drug-tsr">Drug TSR</NavLink></li>
-            <li><NavLink to="/mirror-image">Mirror-Image TSR</NavLink></li>
-            <li><NavLink to="/metal-ion">Metal-Ion TSR</NavLink></li>
-            <li><NavLink to="/size-filtering">Size-Filtering TSR</NavLink></li>
             <li><NavLink to="/aa-grouping">AminoAcid Grouping TSR</NavLink></li>
+            <li><NavLink to="/mirror-image">Mirror-Image TSR</NavLink></li>
+            <li><NavLink to="/size-filtering">Size-Filtering TSR</NavLink></li>
             <li><NavLink to="/sse-tsr">SSE-TSR</NavLink></li>
+            <li><NavLink to="/metal-ion">Metal-Ion TSR</NavLink></li>
           </ul>
         </li>
 

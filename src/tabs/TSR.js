@@ -112,12 +112,12 @@ const TSR = () => {
               retrieve_pdb_files(pdb_ids, 'Dataset/')
             </code>
           </div>
-          <p>This command will download the PDB files into the specified <code>Dataset/</code> directory. The default directory is also <code>Dataset/</code> if not provided.</p>
+          <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
 
           <h4 className="step-title">Generate Keys and Triplets</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
+              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
               data_dir = "Dataset/"<br />
@@ -126,7 +126,7 @@ const TSR = () => {
               output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
               <br />
               # Process protein data to generate key files<br />
-              process_protein_data(data_dir, input_files, chain=chain, output_option=output_option)
+              TSR(data_dir, input_files, chain=chain, output_option=output_option)
             </code>
           </div>
           <p>Protein chains are case-sensitive and should match the chain IDs in the PDB file.</p>
@@ -134,14 +134,14 @@ const TSR = () => {
           <h4 className="step-title">Using a CSV File as Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
+              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
               <br />
               # Define the directory and CSV file path<br />
               data_dir = "Dataset/"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
-              process_protein_data(data_dir, csv_file, output_option="keys")
+              TSR(data_dir, csv_file, output_option="keys")
             </code>
           </div>
           <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
@@ -153,7 +153,7 @@ const TSR = () => {
           <div className="code-block">
             <code>
               from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
+              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
               data_dir = "Dataset/"<br />
@@ -162,19 +162,20 @@ const TSR = () => {
               retrieve_pdb_files(pdb_ids, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
-              process_protein_data(data_dir, pdb_ids, chain=chain, output_option="keys")
+              TSR(data_dir, pdb_ids, chain=chain, output_option="keys")
             </code>
           </div>
 
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
+              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
               <br />
               # Use CSV input for batch processing<br />
               data_dir = "Dataset/"<br />
               csv_file = "sample_details.csv"<br />
-              process_protein_data(data_dir, csv_file, output_option="triplets")
+              retrieve_pdb_files(csv_file)<br />
+              TSR(data_dir, csv_file, output_option="triplets")
             </code>
           </div>
         </section>
