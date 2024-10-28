@@ -54,6 +54,14 @@
   border-radius: 5px;
 }
 
+.mirror-image {
+  max-width: 70%; /* Make sure the image takes up the available width */
+  /* height: auto; */
+  max-height: 500px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
 .protein-description {
   width: 100%;
   /* text-align: left; */
