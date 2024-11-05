@@ -9,6 +9,7 @@ const AAGrouping = () => {
         <nav>
           <ul>
             <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#learn-more">Learn More</a></li>
             <li><a href="#tutorial">Tutorial</a></li>
             <li><a href="#source-code">Source Code</a></li>
           </ul>
@@ -17,20 +18,36 @@ const AAGrouping = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2>AminoAcid Grouping TSR</h2>
-          <p>
+          <h2 className='section-title'>AminoAcid Grouping TSR</h2>
+          <p className='section-paragraph'>
           In our pursuit of enhancing protein 3D structural comparison methods, we introduced amino acid grouping to improve the accuracy of identifying structurally conserved regions across proteins. By grouping amino acids based on their structural similarities, we aim to better capture global structural similarities and facilitate the discovery of conserved motifs, which are crucial for understanding protein functions.
           </p>
-          <p>
+          <p className='section-paragraph'>
           When applied to our Triangular Spatial Relationship (TSR)-based method, amino acid grouping has been shown to modestly improve the accuracy of protein clustering in specific cases. This approach also aids in identifying key substructures, called common and specific keys. Common keys represent substructures shared among different types of proteins, while specific keys belong to a particular protein type, providing deeper insights into protein structure relations.
           </p>
-          <p>
+          <p className='section-paragraph'>
           Additionally, our research demonstrates that amino acid grouping helps uncover conserved binding sites, such as those found in proteins involved in viral infections like SARS-CoV-2. These findings hold promise for antiviral drug design by identifying critical structural features for therapeutic targeting. Overall, incorporating amino acid grouping into structural comparison methods offers a valuable tool for both structural biology and drug discovery efforts.
           </p>
 
           <div className="protein-illustration">
             <img src={aa_grouping} alt="AA Grouping Illustration" className="mirror-image" />
           </div>
+        </section>
+
+        {/* Learn More Section */}
+        <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the AminoAcid Grouping TSR method, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
+          </p>
+          <a 
+            href="https://doi.org/10.1016/j.compbiolchem.2024.108117" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
         </section>
         
         {/* Tutorial Section with New Styles */}
