@@ -9,6 +9,7 @@ const DrugTSR = () => {
         <nav>
           <ul>
             <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#learn-more">Learn More</a></li>
             <li><a href="#tutorial">Tutorial</a></li>
             <li><a href="#source-code">Source Code</a></li>
           </ul>
@@ -17,11 +18,11 @@ const DrugTSR = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2>DrugTSR: Analyzing Drug-Target Interactions with TSR-based Keys</h2>
-          <p>
+          <h2 className='section-title'>DrugTSR: Analyzing Drug-Target Interactions with TSR-based Keys</h2>
+          <p className='section-paragraph'>
           DrugTSR is our advanced method for examining drug-target interactions, extending the Triangular Spatial Relationship (TSR)-based approach to provide unique insights into drug behavior and specificity. This innovative method introduces specialized TSR keys for both drug and target structures, enabling a detailed analysis of their interactions. DrugTSR makes three key contributions:
           </p>
-          <p>
+          <p className='section-paragraph'>
           <ul>
             <li>
             <strong>3D Structure Representation for Drugs and Ligands:</strong> DrugTSR uses TSR keys to represent the 3D structures of drugs, capturing essential structural relationships. These keys facilitate the search for common substructures, allowing for the comparison of drug properties and interaction patterns.
@@ -36,13 +37,28 @@ const DrugTSR = () => {
             </li>
           </ul>
           </p>
-          <p>
+          <p className='section-paragraph'>
           Our results indicate that DrugTSR can enhance clustering accuracy for drug families and predict interaction profiles across similar drugs. It enables researchers to identify specific binding patterns for drug types, with applications ranging from virtual screening to drug design. By facilitating the discovery of unique and common binding interactions, DrugTSR offers an effective computational tool for advancing precision medicine and drug discovery.
           </p>
 
           <div className="protein-illustration">
             <img src={drug_tsr} alt="DrugTSR Illustration" className="mirror-image" />
           </div>
+        </section>
+
+        <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the DrugTSR method, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
+          </p>
+          <a 
+            href="https://doi.org/10.1016/j.compbiolchem.2024.108117" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
         </section>
         
         {/* Tutorial Section with New Styles */}
@@ -87,43 +103,44 @@ const DrugTSR = () => {
           <h4 className="step-title">Retrieve PDB Files</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
-              pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              pdb_files = ['4CI2', '4ci1']<br />
+              PDB_DL(pdb_files, 'Dataset/')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
 
-          <h4 className="step-title">Generate Keys and Triplets with AminoAcid Grouping</h4>
+          <h4 className="step-title">Generate Keys and Triplets</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.Drug_TSR import DrugTSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
-              input_files = ["1GTA", "1GTB", "1LBE"]<br />
-              chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
-              output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
+              data_dir = "Dataset"<br />
+              pdb_files = ['4CI2', '4ci1'] <br />
+              chain=['B', 'B']  # specify chains for each PDB file<br />
+              drug_name=['LVY', 'EF2'] <br />
+              drug_id=['1429', '21429'] <br />
               <br />
               # Process protein data to generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option=output_option, aa_grouping=True)
+              DrugTSR(data_dir, input_files=pdb_files, chain=chain, drug_name=drug_name, drug_id=drug_id, output_option='both')
             </code>
           </div>
           <p>Protein chains are case-sensitive and should match the chain IDs in the PDB file. With 'aa_grouping' argument set to 'True', the Method will group amino acids together and assign a same label to each group of them.</p>
 
-          <h4 className="step-title">Using a CSV File as Input with AminoAcid Grouping</h4>
+          <h4 className="step-title">Using a CSV File as Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.Drug_TSR import DrugTSR<br />
               <br />
               # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
-              TSR(data_dir, csv_file, output_option="keys", aa_grouping=True)
+              DrugTSR(data_dir, input_files=csv_file, output_option='both')
             </code>
           </div>
           <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
@@ -134,30 +151,33 @@ const DrugTSR = () => {
           <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.Drug_TSR import DrugTSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
-              input_files = ["1GTA", "1gtb", "1lbe"]<br />
-              chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(input_files, data_dir)<br />
+              data_dir = "Dataset"<br />
+              pdb_files = ['4CI2', '4ci1']<br />
+              chain=['B', 'B']<br />
+              drug_name=['LVY', 'EF2'] <br />
+              drug_id=['1429', '21429'] <br />
+              PDB_DL(pdb_files)<br />
               <br />
               # Step 2: Generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option="keys", aa_grouping=True)
+              DrugTSR(data_dir, input_files=pdb_files, chain=chain, drug_name=drug_name, drug_id=drug_id, output_option='both')
             </code>
           </div>
 
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.Drug_TSR import DrugTSR<br />
               <br />
               # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
-              retrieve_pdb_files(csv_file)<br />
-              TSR(data_dir, csv_file, output_option="triplets", aa_grouping=True)
+              PDB_DL(csv_file)<br />
+              DrugTSR(data_dir, input_files=csv_file, output_option='both')
             </code>
           </div>
         </section>

@@ -9,6 +9,7 @@ import DrugTSR from './tabs/DrugTSR';
 import MetalIon from './tabs/MetalIon';
 import AAGrouping from './tabs/AAGrouping';
 import SSETSR from './tabs/SSETSR';
+import CrossTSR from './tabs/CrossTSR';
 import NucleotideProtein from './tabs/NucleotideProtein';
 import People from './footer/People';
 import Community from './footer/Community';
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/metal-ion" element={<MetalIon />} />
             <Route path="/aa-grouping" element={<AAGrouping />} />
             <Route path="/sse-tsr" element={<SSETSR />} /> 
+            <Route path="/cross-tsr" element={<CrossTSR />} /> 
             {/* <Route path="/neudeotide" element={<Neudeotide />} /> */}
             <Route path="/nucleotide-protein" element={<NucleotideProtein />} />
           </Routes>
