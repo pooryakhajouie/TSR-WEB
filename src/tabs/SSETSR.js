@@ -18,7 +18,7 @@ const SSETSR = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2 className='section-title'>SSE-TSR</h2>
+          <h2 className='section-title'>SSETSR</h2>
           <p className='section-paragraph'>
           Integration of secondary structure information with TSR (SSE-TSR) is an advanced method for protein structure analysis that integrates secondary structural information with the Triangular Spatial Relationship (TSR) framework. Traditional TSR creates triangles between Cα atoms in protein structures and assigns unique integer keys based on geometric features like distance, angle, and atom type. SSETSR builds on this by categorizing TSR keys into 18 distinct groups based on secondary structural elements such as alpha helices, beta sheets, and coils.
           </p>
