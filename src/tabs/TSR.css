@@ -235,3 +235,21 @@ code {
 .learn-more-button:hover {
   background-color: #2980b9;
 }
+
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border: 3px solid white;
+  text-align: center;
+  min-width: 700px; /* Optional: set a minimum width for the table */
+}
+
+th, td {
+  padding: 10px;
+  border: 2px solid white;
+}

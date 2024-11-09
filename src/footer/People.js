@@ -29,7 +29,6 @@ const peopleData = [
     role: 'Ph.D Student, Computer Science, University of Louisiana at Lafayette',
     description: 'Received his Bachelor\'s degree from Tribhuvan University, Nepal, in Electronics and Communication engineering and is currently pursuing his PhD in Computer Science at the University of Louisiana at Lafayette. His research interests encompass bioinformatics, scientific computing, machine learning, natural language processing (NLP), and generative adversarial networks (GANs).',
     image: krishna,
-    phone: '(337) 390-2967',
     email: 'krishna.rauniyar1@louisiana.edu',
   },
   {
