@@ -17,50 +17,81 @@ const TSR = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr abstract-section">
-      <h2 className="section-title">Abstract / Description</h2>
+      <h2 className="section-title">Triangular Spatial Relationship (TSR)</h2>
           <p className="section-paragraph">
             {/* Insert the abstract content here. Describe the TSR method, its purpose, etc. */}
-            Understanding protein functions often hinges on comparing their 3D structures.
-            However, developing effective methods for such comparisons remains a significant challenge.
-            Over the past four decades, approximately 200 papers have proposed various approaches, categorizing them into sequence-based, distance-based, secondary structure-based, geometry-based, and network-based comparisons.
-            Each method has its strengths, but also limitations.
+            The Triangular Spatial Relationship (TSR) method is an innovative approach for comparing 3D protein structures, designed to overcome the limitations of existing structural comparison techniques. By representing protein structures using a set of unique integers called "keys," TSR provides a comprehensive and efficient way to analyze structural similarities and substructures without needing superimposition or complex alignment.
           </p>
-          <p>
-            We introduce a novel approach called the <strong>Triangular Spatial Relationship (TSR)</strong> method, which models a protein's 3D structure using triangles formed by Cα atoms as vertices. Each triangle is assigned a unique integer "key," calculated using its side lengths, angles, and vertex labels. This rule-based computation ensures that identical TSRs across proteins receive the same key, allowing us to represent protein structures as vectors of integers.
-          </p>
-          <p>
-            Our method offers three key advantages:
-          </p>
+          <h3 className='section-title'>Method Overview</h3>
+          <h4 className='section-subtitle'>Key Generation Process</h4>
+          <p className='section-paragraph'>
           <ul>
-            <li><strong>No Structural Superimposition</strong>: By representing structures as integer vectors, we avoid the complexity of structural superimposition.</li>
-            <li><strong>Efficient Shape Representation</strong>: Triangles are the simplest primitives for capturing protein shape, enabling precise substructure comparisons.</li>
-            <li><strong>Comprehensive Comparison</strong>: We compare every substructure of one protein with those of another, using matching integers to identify structural similarities.</li>
+            <li>
+              <strong>Cα Atom Selection:</strong> TSR begins by selecting Cα atoms from the protein's PDB file as vertices for triangle construction.
+            </li>
+            <li>
+              <strong>Triangle Construction:</strong> All possible triangles formed by these Cα atoms are generated, with their edge lengths and internal angles calculated.
+            </li>
+            <li>
+              <strong>Label Assignment:</strong> Each Cα is assigned an integer identifier (ranging from 4 to 23), which uniquely represents the amino acid. This ensures that identical triangles across different proteins are assigned the same integer identifiers.
+            </li>
+            <li>
+              <strong>Key Calculation:</strong> The identifiers for each triangle are transformed to create labels (li1, li2, li3). Using a rule-based formula, distances and specific angles are determined, which are then used in equations to generate the unique integer key for each triangle.
+            </li>
           </ul>
+          </p>
+          <p className='section-paragraph'>
+            <h4 className='section-subtitle'>Unique Features</h4>
+            <ul>
+              <li>
+                <strong>No Structural Superimposition:</strong> TSR avoids rotation and translation issues, unlike RMSD-based methods, enabling more consistent structural comparison.
+              </li>
+              <li>
+                <strong>Shape Representation:</strong> By using triangles—the simplest form to capture shape—TSR effectively identifies local substructures.
+              </li>
+              <li>
+                <strong>Amino Acid Integration:</strong> The inclusion of amino acid information ensures that triangles with the same geometric properties but different amino acids are assigned different keys.
+              </li>
+              <li>
+                <strong>Motif Discovery:</strong> TSR allows for the discovery of shared substructures, from simple triangles to complex motifs, by identifying connected triangles through shared vertices or edges.
+              </li>
+            </ul>
+          </p>
+          <h4 className='section-subtitle'>Applications</h4>
+          <p className='section-paragraph'>
+          <ul>
+            <li>
+              <strong>Structural Comparison:</strong> TSR quantifies protein similarity based on the number of identical keys, providing insight into protein relationships.
+            </li>
+            <li>
+              <strong>Motif Search:</strong> Capable of identifying unique and conserved motifs across protein families.
+            </li>
+            <li>
+              <strong>Conformational Analysis:</strong> TSR can capture protein conformational changes and differentiate between homologous and non-homologous structures.
+            </li>
+          </ul>
+          </p>
 
           {/* Protein image with description */}
           <div className="protein-illustration">
             <img src={proteinImage} alt="Protein Structure Illustration" className="protein-image" />
-            <div className="protein-description">
-              <h3>Overview:</h3>
-              <ul>
-                <li><strong>Triangle Formation:</strong> Select three alpha carbon (Cα) atoms from amino acids to form a triangle.</li>
-                <li><strong>Angle Calculation:</strong> Calculate the angle (θ) between the sides of the triangle. If the angle is greater than 90°, adjust it using the formula θ_Δ = 180° - θ.</li>
-                <li><strong>Distance Measurement:</strong> Determine the distances between the atoms (d₁₃, d₁₂, and d₂₃), which define the sides of the triangle.</li>
-                <li><strong>Key Calculation:</strong> Assign bin numbers based on the calculated angles and distances. This creates unique structural "keys" for all triplets (Cα₃), representing a part of the protein structure.</li>
-                <li><strong>Label Assignment:</strong> The image provides rules for assigning labels based on the relative sizes of the triangle sides and distances. Four distinct cases are shown, each detailing how to assign labels (Label₁, Label₂, Label₃) depending on the symmetry and geometry of the triangle.</li>
-              </ul>
-              <h4>Rule-Based Label Assignment:</h4>
-              <ul>
-                <li><strong>Case 1:</strong> When the three triangle sides differ, assign labels based on the largest, smallest, and middle values.</li>
-                <li><strong>Case 2 & 3:</strong> When two sides are equal and one is different, assign labels based on the distances between the atoms.</li>
-                <li><strong>Case 4:</strong> When all sides are equal, labels are assigned according to the maximum distance between atoms.</li>
-              </ul>
-            </div>
           </div>
+        </section>
 
-          <p>
-            This method has already shown promise in analyzing proteases and kinases, proteins critical for cell signaling and drug targeting. Additionally, our analysis of CATH and SCOP datasets demonstrates the TSR method’s ability to distinguish between alpha helices and beta sheets. Looking ahead, this approach could evolve into a powerful tool for structural comparison akin to BLAST for sequence alignment.
+        {/* Learn More Section */}
+        <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the TSR method, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
           </p>
+          <a 
+            href="https://doi.org/10.3389/fchem.2020.602291" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
         </section>
         
         {/* Tutorial Section with New Styles */}
@@ -90,6 +121,23 @@ const TSR = () => {
                 </code>
               </div>
             </li>
+
+            <li className="tutorial-step-item">
+              <span className="step-title">Installing the Package:</span>
+              <div className="code-block">
+                <code>
+                  pip install .<br />
+                </code>
+              </div>
+              <p>Alternatively, you can install the package from the built wheel, but first, you should build the distribution files:</p>
+              <div className="code-block">
+                <code>
+                  python setup.py sdist bdist_wheel<br />
+                  pip install dist/tsr_package-0.1.1-py3-none-any.whl
+                </code>
+              </div>
+            </li>
+
             <li className="tutorial-step-item">
               <span className="step-title">Install the required dependencies:</span>
               <div className="code-block">
@@ -105,11 +153,11 @@ const TSR = () => {
           <h4 className="step-title">Retrieve PDB Files</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -117,10 +165,10 @@ const TSR = () => {
           <h4 className="step-title">Generate Keys and Triplets</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1GTB", "1LBE"]<br />
               chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
               output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
@@ -134,10 +182,10 @@ const TSR = () => {
           <h4 className="step-title">Using a CSV File as Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
@@ -152,14 +200,14 @@ const TSR = () => {
           <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               pdb_ids = ["1GTA", "1gtb", "1lbe"]<br />
               chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(pdb_ids, data_dir)<br />
+              PDB_DL(pdb_ids, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
               TSR(data_dir, pdb_ids, chain=chain, output_option="keys")
@@ -169,12 +217,13 @@ const TSR = () => {
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
-              retrieve_pdb_files(csv_file)<br />
+              PDB_DL(csv_file)<br />
               TSR(data_dir, csv_file, output_option="triplets")
             </code>
           </div>

@@ -9,6 +9,8 @@ import DrugTSR from './tabs/DrugTSR';
 import MetalIon from './tabs/MetalIon';
 import AAGrouping from './tabs/AAGrouping';
 import SSETSR from './tabs/SSETSR';
+import Nucleotide from './tabs/Nucleotide';
+import CrossTSR from './tabs/CrossTSR';
 import NucleotideProtein from './tabs/NucleotideProtein';
 import People from './footer/People';
 import Community from './footer/Community';
@@ -19,6 +21,7 @@ import ContactUs from './components/ContactUs';
 import Publications from './components/Publications';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
+import AminoAcid from './tabs/AminoAcid';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
@@ -44,8 +47,11 @@ const App = () => {
             <Route path="/metal-ion" element={<MetalIon />} />
             <Route path="/aa-grouping" element={<AAGrouping />} />
             <Route path="/sse-tsr" element={<SSETSR />} /> 
+            <Route path="/nucleotide" element={<Nucleotide />} />
+            <Route path="/cross-tsr" element={<CrossTSR />} /> 
             {/* <Route path="/neudeotide" element={<Neudeotide />} /> */}
             <Route path="/nucleotide-protein" element={<NucleotideProtein />} />
+            <Route path="/aminoacid" element={<AminoAcid />} />
           </Routes>
         </div>
         <Footer />

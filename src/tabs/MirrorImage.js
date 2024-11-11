@@ -9,6 +9,7 @@ const MirrorImage = () => {
         <nav>
           <ul>
             <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#learn-more">Learn More</a></li>
             <li><a href="#tutorial">Tutorial</a></li>
             <li><a href="#source-code">Source Code</a></li>
           </ul>
@@ -17,20 +18,35 @@ const MirrorImage = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2>Mirror-Image TSR</h2>
-          <p>
+          <h2 className='section-title'>Mirror-Image TSR</h2>
+          <p className='section-paragraph'>
           Building on the Triangular Spatial Relationship (TSR) method, we introduced the Mirror-Image TSR to address a key limitation: the inability to distinguish between triangles that are mirror images of each other. This distinction is critical, as many biological processes are stereospecific, with molecules such as enzymes and receptors showing preferences for particular geometric arrangements of atoms.
           </p>
-          <p>
+          <p className='section-paragraph'>
           The Mirror-Image TSR extends the original TSR approach by incorporating keys that account for the chirality of protein structures. Chirality refers to the geometric property where molecules, despite having the same atomic connectivity, exist as non-superimposable mirror images. This is particularly important in drug development, where enantioselectivity plays a crucial role in determining the function of pharmaceuticals.
           </p>
-          <p>
+          <p className='section-paragraph'>
           By modifying the key generation formula to include mirror-image recognition, Mirror-Image TSR can now capture the stereochemical properties of protein structures, enabling accurate discrimination between enantiomers. This enhanced capability provides greater precision in identifying dynamic structural changes and molecular recognition processes, making Mirror-Image TSR a powerful tool for analyzing stereochemistry in proteins and their interactions with ligands and drugs.
           </p>
 
           <div className="protein-illustration">
             <img src={mirror_image} alt="Mirror Key Illustration" className="mirror-image" />
           </div>
+        </section>
+
+        <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the Mirror-Image TSR, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
+          </p>
+          <a 
+            href="https://doi.org/10.1016/j.compbiolchem.2023.107824" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
         </section>
         
         
@@ -76,11 +92,11 @@ const MirrorImage = () => {
           <h4 className="step-title">Retrieve PDB Files</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset/')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -88,16 +104,16 @@ const MirrorImage = () => {
           <h4 className="step-title">Generate Keys and Triplets, and taking into account the Mirror-Image keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1GTB", "1LBE"]<br />
               chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
               output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
               <br />
               # Process protein data to generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option=output_option, mirror_image=True)
+              TSR(data_dir, input_files, chain=chain, output_option=output_option, <em><strong>mirror_image=True</strong></em>)
             </code>
           </div>
           <p>Protein chains are case-sensitive and should match the chain IDs in the PDB file. With setting the 'mirror_image' argument to 'True', the TSR method will consider the keys and their mirror images by assigning a negative value to the mirror key.</p>
@@ -105,14 +121,14 @@ const MirrorImage = () => {
           <h4 className="step-title">Using a CSV File as Input for Mirror-Image TSR</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
-              TSR(data_dir, csv_file, output_option="keys", mirror_image=True)
+              TSR(data_dir, csv_file, output_option="keys", <em><strong>mirror_image=True</strong></em>)
             </code>
           </div>
           <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
@@ -123,30 +139,31 @@ const MirrorImage = () => {
           <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1gtb", "1lbe"]<br />
               chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(input_files, data_dir)<br />
+              PDB_DL(input_files, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option="keys", mirror_image=True)
+              TSR(data_dir, input_files, chain=chain, output_option="keys", <em><strong>mirror_image=True</strong></em>)
             </code>
           </div>
 
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
-              retrieve_pdb_files(csv_file)<br />
-              TSR(data_dir, csv_file, output_option="triplets", mirror_image=True)
+              PDB_DL(csv_file)<br />
+              TSR(data_dir, csv_file, output_option="triplets", <em><strong>mirror_image=True</strong></em>)
             </code>
           </div>
         </section>

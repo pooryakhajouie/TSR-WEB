@@ -14,69 +14,47 @@ const NucleotideProtein = () => {
           </ul>
         </nav>
       </aside>
-      
+
       <div className="content-tsr">
-      <section id="abstract" className="section-tsr abstract-section">
-      <h2 className="section-title">Abstract / Description</h2>
+        <section id="abstract" className="section-tsr abstract-section">
+          <h2 className="section-title">Nucleotide-Protein TSR</h2>
           <p className="section-paragraph">
-            {/* Insert the abstract content here. Describe the TSR method, its purpose, etc. */}
-            Understanding protein functions often hinges on comparing their 3D structures.
-            However, developing effective methods for such comparisons remains a significant challenge.
-            Over the past four decades, approximately 200 papers have proposed various approaches, categorizing them into sequence-based, distance-based, secondary structure-based, geometry-based, and network-based comparisons.
-            Each method has its strengths, but also limitations.
+            The CrossKeys tool provides precise computational analysis of drug-protein interactions by focusing on specific residues, enhancing insight into molecular bonding and affinity across drug discovery and protein research. This calculation module considers key nucleotide and protein residues, essential for studying the biochemical dynamics that influence therapeutic efficacy and specificity.
           </p>
           <p>
-            We introduce a novel approach called the <strong>Triangular Spatial Relationship (TSR)</strong> method, which models a protein's 3D structure using triangles formed by Cα atoms as vertices. Each triangle is assigned a unique integer "key," calculated using its side lengths, angles, and vertex labels. This rule-based computation ensures that identical TSRs across proteins receive the same key, allowing us to represent protein structures as vectors of integers.
-          </p>
-          <p>
-            Our method offers three key advantages:
+            <strong>Nucleotide Residues: </strong>Our analysis includes eight core nucleotides commonly found in both RNA and DNA structures:
           </p>
           <ul>
-            <li><strong>No Structural Superimposition</strong>: By representing structures as integer vectors, we avoid the complexity of structural superimposition.</li>
-            <li><strong>Efficient Shape Representation</strong>: Triangles are the simplest primitives for capturing protein shape, enabling precise substructure comparisons.</li>
-            <li><strong>Comprehensive Comparison</strong>: We compare every substructure of one protein with those of another, using matching integers to identify structural similarities.</li>
+            <li><strong>RNA Nucleotides</strong>: G (Guanine), A (Adenine), C (Cytosine), U (Uracil)</li>
+            <li><strong>DNA Nucleotides</strong>: DG (Deoxyguanine), DA (Deoxyadenine), DC (Deoxycytosine), DT (Thymine)</li>
           </ul>
-
-          {/* Protein image with description */}
-          <div className="protein-illustration">
-            <img src={proteinImage} alt="Protein Structure Illustration" className="protein-image" />
-            <div className="protein-description">
-              <h3>Overview:</h3>
-              <ul>
-                <li><strong>Triangle Formation:</strong> Select three alpha carbon (Cα) atoms from amino acids to form a triangle.</li>
-                <li><strong>Angle Calculation:</strong> Calculate the angle (θ) between the sides of the triangle. If the angle is greater than 90°, adjust it using the formula θ_Δ = 180° - θ.</li>
-                <li><strong>Distance Measurement:</strong> Determine the distances between the atoms (d₁₃, d₁₂, and d₂₃), which define the sides of the triangle.</li>
-                <li><strong>Key Calculation:</strong> Assign bin numbers based on the calculated angles and distances. This creates unique structural "keys" for all triplets (Cα₃), representing a part of the protein structure.</li>
-                <li><strong>Label Assignment:</strong> The image provides rules for assigning labels based on the relative sizes of the triangle sides and distances. Four distinct cases are shown, each detailing how to assign labels (Label₁, Label₂, Label₃) depending on the symmetry and geometry of the triangle.</li>
-              </ul>
-              <h4>Rule-Based Label Assignment:</h4>
-              <ul>
-                <li><strong>Case 1:</strong> When the three triangle sides differ, assign labels based on the largest, smallest, and middle values.</li>
-                <li><strong>Case 2 & 3:</strong> When two sides are equal and one is different, assign labels based on the distances between the atoms.</li>
-                <li><strong>Case 4:</strong> When all sides are equal, labels are assigned according to the maximum distance between atoms.</li>
-              </ul>
-            </div>
-          </div>
-
           <p>
-            This method has already shown promise in analyzing proteases and kinases, proteins critical for cell signaling and drug targeting. Additionally, our analysis of CATH and SCOP datasets demonstrates the TSR method’s ability to distinguish between alpha helices and beta sheets. Looking ahead, this approach could evolve into a powerful tool for structural comparison akin to BLAST for sequence alignment.
+            <strong>Protein Residues: </strong>The CrossKeys calculation supports 23 essential protein residues, representing a range of chemical properties:
           </p>
+          <ul>
+            <li><strong>Nonpolar (Hydrophobic)</strong>: GLY (Glycine), ALA (Alanine), VAL (Valine), LEU (Leucine), ILE (Isoleucine), PRO (Proline), PHE (Phenylalanine), TYR (Tyrosine), TRP (Tryptophan)</li>
+            <li><strong>Polar (Uncharged)</strong>: SER (Serine), THR (Threonine), MET (Methionine), CYS (Cysteine), HIS (Histidine), ASN (Asparagine), GLN (Glutamine)</li>
+            <li><strong>Positively Charged (Basic)</strong>: LYS (Lysine), ARG (Arginine)</li>
+            <li><strong>Negatively Charged (Acidic)</strong>: ASP (Aspartic Acid), GLU (Glutamic Acid)</li>
+            <li><strong>Modified Residues for Post-Translational Modifications</strong>: TPO (Phosphothreonine), SEP (Phosphoserine), PTR (Phosphotyrosine)</li>
+          </ul>
+          <p>These residues are strategically selected to provide comprehensive interaction insights, particularly suited for applications in structural biology, computational biochemistry, and targeted drug design. CrossKeys calculations empower researchers to predict and analyze residue interactions, facilitating the discovery of critical patterns in nucleotide-protein binding mechanisms.</p>
         </section>
-        
+
         {/* Tutorial Section with New Styles */}
         <section id="tutorial" className="section-tsr tutorial-section">
           <h2 className="tutorial-title">Tutorial</h2>
 
           {/* Installation Section */}
           <h3 className="step-title">Installation</h3>
-          <p>To use the TSR package, follow the steps below to clone the repository and install the necessary dependencies:</p>
+          <p>To use the Nucleotide-Protein TSR package, follow the steps below to clone the repository and install the necessary dependencies:</p>
           <ol className="tutorial-steps">
             <li className="tutorial-step-item">
               <span className="step-title">Clone the repository:</span>
               <div className="code-block">
                 <code>
-                  git clone https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE.git<br />
-                  cd TSR_NUCLEOTIDE_PACKAGE
+                  git clone https://github.com/KrishnaRauniyar/Nucleotide-Protein.git<br />
+                  cd Nucleotide-Protein
                 </code>
               </div>
             </li>
@@ -100,94 +78,89 @@ const NucleotideProtein = () => {
 
           {/* Usage Section */}
           <h3 className="step-title">Usage</h3>
-          <p>Once installed, you can use the following steps to retrieve PDB files and generate key/triplet files.</p>
-
-          <h4 className="step-title">Retrieve PDB Files</h4>
-          <div className="code-block">
-            <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              <br />
-              # Retrieve PDB files for the specified PDB IDs<br />
-              pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
-            </code>
-          </div>
-          <p>This command will download the PDB files into the specified <code>Dataset/</code> directory. The default directory is also <code>Dataset/</code> if not provided.</p>
+          <p>Once installed, you can use the following command to generate keys and triplets files.</p>
 
           <h4 className="step-title">Generate Keys and Triplets</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
-              <br />
-              # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
-              input_files = ["1GTA", "1GTB", "1LBE"]<br />
-              chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
-              output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
-              <br />
-              # Process protein data to generate key files<br />
-              process_protein_data(data_dir, input_files, chain=chain, output_option=output_option)
+              python cross_key.py -p drug_protein_cross.csv -o output_dir
             </code>
           </div>
-          <p>Protein chains are case-sensitive and should match the chain IDs in the PDB file.</p>
+          <p>This command will store all the results in <strong>output_dir</strong> directory.</p>
 
-          <h4 className="step-title">Using a CSV File as Input</h4>
+          <h4 className="step-title">CSV file information as input (drug_protein_cross.csv)</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
-              <br />
-              # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
-              csv_file = "sample_details.csv"<br />
-              <br />
-              # Process the CSV input<br />
-              process_protein_data(data_dir, csv_file, output_option="keys")
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Drug</th>
+                      <th>Drug Sequence</th>
+                      <th>Drug Coordinates</th>
+                      <th>Protein</th>
+                      <th>Protein Sequence</th>
+                      <th>Protein Coordinates</th>
+                      <th>Distance (Å)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>3D0A_E_DC_1_O5'</td>
+                      <td>109</td>
+                      <td>-3.283, 17.038, 0.965</td>
+                      <td>3D0A_A_SER_121_O</td>
+                      <td>109</td>
+                      <td>-2.462, 18.759, 2.734</td>
+                      <td>2.6</td>
+                    </tr>
+                    <tr>
+                      <td>3D0A_E_DC_1_C5'</td>
+                      <td>106</td>
+                      <td>-3.710, 17.876, -0.156</td>
+                      <td>3D0A_A_SER_121_O</td>
+                      <td>109</td>
+                      <td>-2.462, 18.759, 2.734</td>
+                      <td>3.3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </code>
           </div>
-          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
 
-          {/* Example Section */}
-          <h3 className="step-title">Examples</h3>
+          <p>The csv input file includes information for both Nucleotide (drug) and Protein. The first three columns contains the drug name, drug sequence number, and X, Y, Z coordinates and the following three columns contains the protein name, protein sequence number, and X, Y, Z coordinates and the last columns is the distance between these drug and protein. You can find the csv file in the github link below.</p>
 
-          <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
-          <div className="code-block">
-            <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
-              <br />
-              # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
-              pdb_ids = ["1GTA", "1gtb", "1lbe"]<br />
-              chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(pdb_ids, data_dir)<br />
-              <br />
-              # Step 2: Generate key files<br />
-              process_protein_data(data_dir, pdb_ids, chain=chain, output_option="keys")
-            </code>
-          </div>
-
-          <h4 className="step-title">Example 2: Using CSV File for Input</h4>
-          <div className="code-block">
-            <code>
-              from tsr_package.tsr.generate_keys_and_triplets import process_protein_data<br />
-              <br />
-              # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
-              csv_file = "sample_details.csv"<br />
-              process_protein_data(data_dir, csv_file, output_option="triplets")
-            </code>
-          </div>
+          <h4 className="step-title">Results</h4>
+          <p>CrossKeys and triplets will be generated between:
+            <ul>
+              <li><strong>One drug and two protein atoms</strong></li>
+              <li><strong>Two drug and one protein atoms</strong></li>
+            </ul>
+          </p>
+          <p>The results will be stored in output_dir as:
+            <ul>
+              <li>filename.keys_Freq_theta29_dist18 (1_1TSR_E_DT.keys_Freq_theta29_dist18): It will store the frequency triplets</li>
+              <li>filename.keys_theta29_dist18 (1_1TSR_E_DT.keys_theta29_dist18): It will store the keys information</li>
+            </ul>
+          </p>
+          <p>If their are less atoms than 3 then no cross keys will be generated and the terminal will output error message like the example below:
+            <ul>
+              <li>Cannot make keys for 46_3TS8_L_DT having only 2 atoms.</li>
+              <li>Cannot make keys for 9_7B4G_B_DC having only 2 atoms.</li>
+            </ul>
+          </p>
         </section>
-        
+
         <section id="source-code" className="section-tsr source-code-section">
           <h2 className="section-title">Source Code</h2>
           <p className="section-paragraph">
-            The full source code for the TSR package is available on GitHub. You can explore, contribute, or fork the repository using the following link:
+            The full source code for the Nucleotide-Protein TSR package is available on GitHub. You can explore, contribute, or fork the repository using the following link:
           </p>
           <div className="code-block">
             <code>
-              <a href="https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE.git" target="_blank" rel="noopener noreferrer" className="source-code-link">
-                GitHub Repository: https://github.com/KrishnaRauniyar/TSR_NUCLEOTIDE_PACKAGE
+              <a href="https://github.com/KrishnaRauniyar/Nucleotide-Protein.git" target="_blank" rel="noopener noreferrer" className="source-code-link">
+                GitHub Repository: https://github.com/KrishnaRauniyar/Nucleotide-Protein.git
               </a>
             </code>
           </div>
