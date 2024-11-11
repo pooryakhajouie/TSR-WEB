@@ -20,6 +20,7 @@ import ContactUs from './components/ContactUs';
 import Publications from './components/Publications';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
+import AminoAcid from './tabs/AminoAcid';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
@@ -47,6 +48,7 @@ const App = () => {
             <Route path="/sse-tsr" element={<SSETSR />} /> 
             <Route path="/nucleotide" element={<Nucleotide />} />
             <Route path="/nucleotide-protein" element={<NucleotideProtein />} />
+            <Route path="/aminoacid" element={<AminoAcid />} />
           </Routes>
         </div>
         <Footer />
