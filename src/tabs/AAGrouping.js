@@ -77,6 +77,23 @@ const AAGrouping = () => {
                 </code>
               </div>
             </li>
+
+            <li className="tutorial-step-item">
+              <span className="step-title">Installing the Package:</span>
+              <div className="code-block">
+                <code>
+                  pip install .<br />
+                </code>
+              </div>
+              <p>Alternatively, you can install the package from the built wheel, but first, you should build the distribution files:</p>
+              <div className="code-block">
+                <code>
+                  python setup.py sdist bdist_wheel<br />
+                  pip install dist/tsr_package-0.1.1-py3-none-any.whl
+                </code>
+              </div>
+            </li>
+
             <li className="tutorial-step-item">
               <span className="step-title">Install the required dependencies:</span>
               <div className="code-block">
@@ -96,7 +113,7 @@ const AAGrouping = () => {
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              PDB_DL(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -131,7 +148,35 @@ const AAGrouping = () => {
               TSR(data_dir, csv_file, output_option="keys", <strong><em>aa_grouping=True</em></strong>)
             </code>
           </div>
-          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
+          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains, like the following:</p>
+          <div className="table-code-block">
+            <code>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>protein</th>
+                      <th>chain</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1GTA</td>
+                      <td>A</td>
+                    </tr>
+                    <tr>
+                      <td>1GTB</td>
+                      <td>A</td>
+                    </tr>
+                    <tr>
+                      <td>1LBE</td>
+                      <td>A</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </code>
+          </div>
 
           {/* Example Section */}
           <h3 className="step-title">Examples</h3>
@@ -159,7 +204,7 @@ const AAGrouping = () => {
             from tsr_package.tsr.PDB_DL import PDB_DL<br />
               from tsr_package.tsr.TSR import TSR<br />
               <br />
-              # Use CSV input for batch processing<br />
+              # Use CSV input<br />
               data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               PDB_DL(csv_file)<br />

@@ -192,7 +192,35 @@ const TSR = () => {
               TSR(data_dir, csv_file, output_option="keys")
             </code>
           </div>
-          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
+          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains, like the following:</p>
+          <div className="table-code-block">
+            <code>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>protein</th>
+                      <th>chain</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1GTA</td>
+                      <td>A</td>
+                    </tr>
+                    <tr>
+                      <td>1GTB</td>
+                      <td>A</td>
+                    </tr>
+                    <tr>
+                      <td>1LBE</td>
+                      <td>A</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </code>
+          </div>
 
           {/* Example Section */}
           <h3 className="step-title">Examples</h3>
