@@ -88,6 +88,23 @@ const DrugTSR = () => {
                 </code>
               </div>
             </li>
+
+            <li className="tutorial-step-item">
+              <span className="step-title">Installing the Package:</span>
+              <div className="code-block">
+                <code>
+                  pip install .<br />
+                </code>
+              </div>
+              <p>Alternatively, you can install the package from the built wheel, but first, you should build the distribution files:</p>
+              <div className="code-block">
+                <code>
+                  python setup.py sdist bdist_wheel<br />
+                  pip install dist/tsr_package-0.1.1-py3-none-any.whl
+                </code>
+              </div>
+            </li>
+
             <li className="tutorial-step-item">
               <span className="step-title">Install the required dependencies:</span>
               <div className="code-block">
@@ -107,7 +124,7 @@ const DrugTSR = () => {
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_files = ['4CI2', '4ci1']<br />
-              PDB_DL(pdb_files, 'Dataset/')
+              PDB_DL(pdb_files, 'Dataset')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -144,6 +161,42 @@ const DrugTSR = () => {
             </code>
           </div>
           <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
+          <div className="table-code-block">
+            <code>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>protein</th>
+                      <th>chain</th>
+                      <th>drug_name</th>
+                      <th>drug_id</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5L2I</td>
+                      <td>B</td>
+                      <td>LVY</td>
+                      <td>1429</td>
+                    </tr>
+                    <tr>
+                      <td>5XYZ</td>
+                      <td>A</td>
+                      <td>LQQ</td>
+                      <td>21429</td>
+                    </tr>
+                    <tr>
+                      <td>1ABC</td>
+                      <td>C</td>
+                      <td>EF2</td>
+                      <td>402</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </code>
+          </div>
 
           {/* Example Section */}
           <h3 className="step-title">Examples</h3>

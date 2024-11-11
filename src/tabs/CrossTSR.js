@@ -88,6 +88,23 @@ const CrossTSR = () => {
                 </code>
               </div>
             </li>
+
+            <li className="tutorial-step-item">
+              <span className="step-title">Installing the Package:</span>
+              <div className="code-block">
+                <code>
+                  pip install .<br />
+                </code>
+              </div>
+              <p>Alternatively, you can install the package from the built wheel, but first, you should build the distribution files:</p>
+              <div className="code-block">
+                <code>
+                  python setup.py sdist bdist_wheel<br />
+                  pip install dist/tsr_package-0.1.1-py3-none-any.whl
+                </code>
+              </div>
+            </li>
+
             <li className="tutorial-step-item">
               <span className="step-title">Install the required dependencies:</span>
               <div className="code-block">
@@ -107,7 +124,7 @@ const CrossTSR = () => {
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              retrieve_pdb_files(pdb_ids, 'Dataset')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -142,7 +159,39 @@ const CrossTSR = () => {
               TSR(data_dir, csv_file, output_option="keys", aa_grouping=True)
             </code>
           </div>
-          <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
+          <p>The CSV file should have three columns: one for the protein IDs and one for the first chain, and another one for the second chain, like the following:</p>
+          <div className="table-code-block">
+            <code>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>protein</th>
+                      <th>chain1</th>
+                      <th>chain2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5L2I</td>
+                      <td>A</td>
+                      <td>B</td>
+                    </tr>
+                    <tr>
+                      <td>2EUF</td>
+                      <td>A</td>
+                      <td>C</td>
+                    </tr>
+                    <tr>
+                      <td>3ABC</td>
+                      <td>B</td>
+                      <td>D</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </code>
+          </div>
 
           {/* Example Section */}
           <h3 className="step-title">Examples</h3>
