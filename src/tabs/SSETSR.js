@@ -9,6 +9,7 @@ const SSETSR = () => {
         <nav>
           <ul>
             <li><a href="#abstract">Abstract</a></li>
+            {/* <li><a href="#learn-more">Learn More</a></li> */}
             <li><a href="#tutorial">Tutorial</a></li>
             <li><a href="#source-code">Source Code</a></li>
           </ul>
@@ -17,20 +18,35 @@ const SSETSR = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2>SSE-TSR</h2>
-          <p>
+          <h2 className='section-title'>SSETSR</h2>
+          <p className='section-paragraph'>
           Integration of secondary structure information with TSR (SSE-TSR) is an advanced method for protein structure analysis that integrates secondary structural information with the Triangular Spatial Relationship (TSR) framework. Traditional TSR creates triangles between Cα atoms in protein structures and assigns unique integer keys based on geometric features like distance, angle, and atom type. SSETSR builds on this by categorizing TSR keys into 18 distinct groups based on secondary structural elements such as alpha helices, beta sheets, and coils.
           </p>
-          <p>
+          <p className='section-paragraph'>
           This enhanced approach offers a more detailed representation of protein structures, improving classification accuracy. By focusing not only on the geometric arrangement of Cα atoms but also on secondary structures, SSE-TSR ensures a richer and more robust characterization of proteins. This dual-level representation allows for efficient, alignment-free comparisons between proteins, making it possible to capture both high-level structural features and subtle substructural variations.
           </p>
-          <p>
+          <p className='section-paragraph'>
           The method has been tested on two major protein datasets, demonstrating superior performance in classifying proteins based on structure. These results highlight SSE-TSR’s potential for advancing bioinformatics research by providing more precise and scalable tools for protein structure analysis.
           </p>
           <div className="protein-illustration">
             <img src={sse_tsr} alt="Size Filtering Illustration Illustration" className="mirror-image" />
           </div>
         </section>
+
+        {/* <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the AminoAcid Grouping TSR method, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
+          </p>
+          <a 
+            href="https://doi.org/10.1016/j.compbiolchem.2021.107479" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
+        </section> */}
         
         {/* Tutorial Section with New Styles */}
         <section id="tutorial" className="section-tsr tutorial-section">
@@ -74,11 +90,11 @@ const SSETSR = () => {
           <h4 className="step-title">Retrieve PDB Files</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset/')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -86,10 +102,10 @@ const SSETSR = () => {
           <h4 className="step-title">Generate Keys and Triplets with Integrated Secondary Structure Information</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import SSETSR<br />
+              from tsr_package.tsr.SSE_TSR import SSETSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1GTB", "1LBE"]<br />
               chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
               output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
@@ -103,10 +119,10 @@ const SSETSR = () => {
           <h4 className="step-title">Using a CSV File as Input for Generating key files with their Secondary Structure Information</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import SSETSR<br />
+              from tsr_package.tsr.SSE_TSR import SSETSR<br />
               <br />
               # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
@@ -121,14 +137,14 @@ const SSETSR = () => {
           <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import SSETSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.SSE_TSR import SSETSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1gtb", "1lbe"]<br />
               chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(input_files, data_dir)<br />
+              PDB_DL(input_files, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
               SSETSR(data_dir, input_files, chain=chain, output_option="keys")
@@ -138,12 +154,13 @@ const SSETSR = () => {
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import SSETSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.SSE_TSR import SSETSR<br />
               <br />
               # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
-              retrieve_pdb_files(csv_file)<br />
+              PDB_DL(csv_file)<br />
               SSETSR(data_dir, csv_file, output_option="triplets")
             </code>
           </div>

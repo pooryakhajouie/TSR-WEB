@@ -9,6 +9,7 @@ const SizeFiltering = () => {
         <nav>
           <ul>
             <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#learn-more">Learn More</a></li>
             <li><a href="#tutorial">Tutorial</a></li>
             <li><a href="#source-code">Source Code</a></li>
           </ul>
@@ -17,21 +18,36 @@ const SizeFiltering = () => {
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
-          <h2>Size Filtering TSR</h2>
-          <p>
+          <h2 className='section-title'>Size Filtering TSR</h2>
+          <p className='section-paragraph'>
             Protein comparison often encounters challenges when analyzing proteins of vastly different sizes. Smaller proteins may appear structurally dissimilar to larger ones simply due to the size difference, leading to underestimation of structural similarities. To address this issue, we developed the size filtering algorithm, a novel enhancement to the Triangular Spatial Relationship (TSR)-based method, designed to improve protein structure comparisons by accounting for size disparities.
           </p>
-          <p>
+          <p className='section-paragraph'>
             The size filtering method works by calculating the MaxDist (maximum distance between Cα atoms) for all triangles in the proteins being compared. We then filter out triangles from the larger protein that exceed the MaxDist of the smaller one, effectively removing outliers that skew the similarity calculation. After filtering, a more accurate comparison is performed using Jaccard similarity, resulting in improved clustering of proteins.
           </p>
-          <p>
+          <p className='section-paragraph'>
             Our studies demonstrated the effectiveness of this method across several protein families. For example, applying size filtering to glucocorticoid receptors led to improved clustering results, grouping proteins that were previously separated due to size differences. Similar improvements were observed with other protein families, including phosphatases and GPCRs.
           </p>
-          <p>By enhancing structural similarity measurements, size filtering offers a more refined approach to protein clustering, enabling more accurate comparisons between proteins of different sizes and uncovering deeper insights into their functional relationships.
+          <p className='section-paragraph'>By enhancing structural similarity measurements, size filtering offers a more refined approach to protein clustering, enabling more accurate comparisons between proteins of different sizes and uncovering deeper insights into their functional relationships.
           </p>
           <div className="protein-illustration">
             <img src={size_filtering} alt="Size Filtering Illustration Illustration" className="mirror-image" />
           </div>
+        </section>
+
+        <section id="learn-more" className="section-tsr learn-more-section">
+          <h2 className="section-title">Learn More</h2>
+          <p className="section-paragraph">
+            For more in-depth information on the Size Filtering TSR method, please refer to the published research paper. This paper provides detailed explanations, methodology, and results that might be valuable for your research and understanding.
+          </p>
+          <a 
+            href="https://doi.org/10.1002/prot.26215" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="learn-more-button"
+          >
+            Read the Full Paper
+          </a>
         </section>
         
         {/* Tutorial Section with New Styles */}
@@ -76,11 +92,11 @@ const SizeFiltering = () => {
           <h4 className="step-title">Retrieve PDB Files</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset/')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -88,16 +104,16 @@ const SizeFiltering = () => {
           <h4 className="step-title">Generate Keys and Triplets with Size-Filtering</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory where PDB files are stored<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1GTB", "1LBE"]<br />
               chain = ["A", "A", "A"]  # specify chains for each PDB file<br />
               output_option = "keys"  # choose 'keys', 'triplets', or 'both'<br />
               <br />
               # Process protein data to generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option=output_option, size_filter=500)
+              TSR(data_dir, input_files, chain=chain, output_option=output_option, <strong><em>size_filter=500</em></strong>)
             </code>
           </div>
           <p>Protein chains are case-sensitive and should match the chain IDs in the PDB file. With the 'size_filter' argument, the TSR method will fiter out keys with maxDist higher that the size_filter.</p>
@@ -105,14 +121,14 @@ const SizeFiltering = () => {
           <h4 className="step-title">Using a CSV File as Input with Size-Filtering</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Define the directory and CSV file path<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               <br />
               # Process the CSV input<br />
-              TSR(data_dir, csv_file, output_option="keys", size_filter=500)
+              TSR(data_dir, csv_file, output_option="keys", <strong><em>size_filter=500</em></strong>)
             </code>
           </div>
           <p>The CSV file should have two columns: one for the protein IDs and one for the corresponding chains.</p>
@@ -123,30 +139,31 @@ const SizeFiltering = () => {
           <h4 className="step-title">Example 1: Retrieving PDB Files and Generating Keys</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.retrieve_pdb_files import retrieve_pdb_files<br />
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Step 1: Retrieve PDB files<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               input_files = ["1GTA", "1gtb", "1lbe"]<br />
               chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(input_files, data_dir)<br />
+              PDB_DL(input_files, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
-              TSR(data_dir, input_files, chain=chain, output_option="keys", size_filter=500)
+              TSR(data_dir, input_files, chain=chain, output_option="keys", <strong><em>size_filter=500</em></strong>)
             </code>
           </div>
 
           <h4 className="step-title">Example 2: Using CSV File for Input</h4>
           <div className="code-block">
             <code>
-              from tsr_package.tsr.generate_keys_and_triplets import TSR<br />
+              from tsr_package.tsr.PDB_DL import PDB_DL<br />
+              from tsr_package.tsr.TSR import TSR<br />
               <br />
               # Use CSV input for batch processing<br />
-              data_dir = "Dataset/"<br />
+              data_dir = "Dataset"<br />
               csv_file = "sample_details.csv"<br />
               retrieve_pdb_files(csv_file)<br />
-              TSR(data_dir, csv_file, output_option="triplets", size_filter=500)
+              TSR(data_dir, csv_file, output_option="triplets", <strong><em>size_filter=500</em></strong>)
             </code>
           </div>
         </section>
