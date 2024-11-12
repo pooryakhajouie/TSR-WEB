@@ -172,7 +172,7 @@ const NavBar = () => {
           </span>
           <ul className={`dropdown-content ${activeDropdown === 'tsrKeyAnalysis' ? 'show' : ''}`}>
             <li><NavLink to="/people">Key to 2D Image</NavLink></li>
-            <li><NavLink to="/contact">Common Key</NavLink></li>
+            <li><NavLink to="/commonkeys">Common Keys</NavLink></li>
           </ul>
         </li>
 
