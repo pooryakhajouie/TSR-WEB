@@ -176,6 +176,19 @@ const NavBar = () => {
           </ul>
         </li>
 
+        
+        <li className="dropdown">
+          <span
+            className="dropdown-title"
+            onClick={() => toggleDropdown('tsrKeyVisualization')}
+          >
+            TSR Key Visualization
+          </span>
+          <ul className={`dropdown-content ${activeDropdown === 'tsrKeyVisualization' ? 'show' : ''}`}>
+            <li><NavLink to="/clustering">Hierarchical Clustering</NavLink></li>
+          </ul>
+        </li>
+
         <li><NavLink to="/publications">Our Publications</NavLink></li>
         
         <li className="dropdown">
