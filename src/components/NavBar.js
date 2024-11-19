@@ -185,7 +185,7 @@ const NavBar = () => {
             TSR Key Visualization
           </span>
           <ul className={`dropdown-content ${activeDropdown === 'tsrKeyVisualization' ? 'show' : ''}`}>
-            <li><NavLink to="/clustering">Hierarchical Clustering</NavLink></li>
+            <li><NavLink to="/clustering">Hierarchical-Clustering</NavLink></li>
           </ul>
         </li>
 
