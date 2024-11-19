@@ -172,7 +172,20 @@ const NavBar = () => {
           </span>
           <ul className={`dropdown-content ${activeDropdown === 'tsrKeyAnalysis' ? 'show' : ''}`}>
             <li><NavLink to="/people">Key to 2D Image</NavLink></li>
-            <li><NavLink to="/contact">Common Key</NavLink></li>
+            <li><NavLink to="/commonkeys">Common Keys</NavLink></li>
+          </ul>
+        </li>
+
+        
+        <li className="dropdown">
+          <span
+            className="dropdown-title"
+            onClick={() => toggleDropdown('tsrKeyVisualization')}
+          >
+            TSR Key Visualization
+          </span>
+          <ul className={`dropdown-content ${activeDropdown === 'tsrKeyVisualization' ? 'show' : ''}`}>
+            <li><NavLink to="/clustering">Hierarchical Clustering</NavLink></li>
           </ul>
         </li>
 

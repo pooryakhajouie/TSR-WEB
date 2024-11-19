@@ -6,6 +6,12 @@ import krishna from '../images/krishna.jpg';
 import poorya from '../images/poorya.jpeg';
 import titli from '../images/titli.jpeg';
 import sarika from '../images/sarika.jpeg';
+import soundharya from '../images/soundharya.jpg';
+import ramy from '../images/ramy.png';
+import rhen from '../images/rhen.png';
+import josee from '../images/josee.jpg';
+import kallie from '../images/kallie.png';
+import tyler from '../images/tyler.png';
 
 const peopleData = [
   {
@@ -25,13 +31,6 @@ const peopleData = [
     email: 'wu.xu@louisiana.edu',
   },
   {
-    name: 'Krishna Rauniyar',
-    role: 'Ph.D Student, Computer Science, University of Louisiana at Lafayette',
-    description: 'Received his Bachelor\'s degree from Tribhuvan University, Nepal, in Electronics and Communication engineering and is currently pursuing his PhD in Computer Science at the University of Louisiana at Lafayette. His research interests encompass bioinformatics, scientific computing, machine learning, natural language processing (NLP), and generative adversarial networks (GANs).',
-    image: krishna,
-    email: 'krishna.rauniyar1@louisiana.edu',
-  },
-  {
     name: 'Poorya Khajouie',
     role: 'Ph.D Student, Computer Science, University of Louisiana at Lafayette',
     description: 'Received his Bachelor\'s degree in computer engineering from the Iran University of Science and Technology and a Master\'s degree in information technology from Tarbiat Modares University. He is currently working towards his PhD in computer science with the School of Computing and Informatics at the University of Louisiana at Lafayette. His research interest lies in bioinformatics, computational biology, machine learning, and natural language processing.',
@@ -39,6 +38,61 @@ const peopleData = [
     phone: '(337) 504-0448',
     email: 'poorya.khajouie1@louisiana.edu',
   },
+  {
+    name: 'Krishna Rauniyar',
+    role: 'Ph.D Student, Computer Science, University of Louisiana at Lafayette',
+    description: 'Received his Bachelor\'s degree from Tribhuvan University, Nepal, in Electronics and Communication engineering and is currently pursuing his PhD in Computer Science at the University of Louisiana at Lafayette. His research interests encompass bioinformatics, scientific computing, machine learning, natural language processing (NLP), and generative adversarial networks (GANs).',
+    image: krishna,
+    email: 'krishna.rauniyar1@louisiana.edu',
+  },
+  {
+    name: 'Soundharya Dhanabal',
+    role: 'Senior, General Studies with a background in Biology',
+    description: 'For the past two years, Soundharya has been actively involved in research, which has been an incredibly rewarding experience. With the guidance of her professor, support from fellow students, and resources from the Advanced Student Research Program, she has presented her research at both local and national conferences. This experience has allowed her to showcase her work, learn new concepts, meet professionals in her field, and build valuable connections.',
+    image: soundharya, 
+    phone: '', 
+    email: '',
+  },
+  {
+    name: 'Ramy Rayan Alabdulkarim',
+    role: 'Biology Major with Minors in Chemistry and Psychology (Pre-Dental Concentration)',
+    description: 'Ramy is passionate about dentistry, aspiring to give people the confidence of a perfect smile. He engages in undergraduate research to enhance his knowledge and build his resume. Outside academics, Ramy is an assistant tennis coach, a former district champion and state-level tennis player, and an avid pickleball enthusiast. He is also the secretary of the Pre-Professional Society at UL, balancing leadership roles with personal interests like fitness, motorcycles, and mental health advocacy. Ramy plans to graduate in Fall 2025 and pursue his dreams while cherishing his time as a proud Cajun.',
+    image: ramy, 
+    phone: '', 
+    email: '',
+},
+{
+    name: 'Rhen Renfrow',
+    role: 'Biology Major, Aspiring Optometrist',
+    description: 'Rhen is a biology major at UL with aspirations to become an optometrist. A former college football player at Mississippi College, he now coaches as a tight end and linebacker coach at Kaplan High School. Inspired by his Biochemistry course with Dr. Wu Xu, Rhen developed a passion for the subject and pursued research under Dr. Xu. Outside of academics and coaching, he enjoys playing video games, listening to music, playing guitar, and spending time with his family and two dogs.',
+    image: rhen, 
+    phone: '', 
+    email: '',
+},
+{
+  name: 'Josee Robinson',
+  role: 'Senior, Psychology Major with Pre-Med Concentration and Chemistry Minor',
+  description: 'Josee is a senior at ULL majoring in Psychology with a pre-med concentration and a minor in Chemistry. She plans to take a gap year working in a clinical setting before pursuing medical school to specialize in Psychiatry. Josee is highly involved on campus, participating in her sorority, the Pre-Professional Society, Presidential Student Ambassadors, Women Chemists Society, Psychology Academic Mentoring, and the honors program. She also volunteers at Our Lady of Lourdes. Excited to start research in Dr. Wu’s lab, Josee is eager to expand her knowledge and skills.',
+  image: josee, 
+  phone: '', 
+  email: '',
+},
+{
+  name: 'Kallie LaFleur',
+  role: 'Senior, Biology Major with Chemistry Minor',
+  description: 'Kallie is a senior at the University of Louisiana at Lafayette majoring in Biology with a minor in Chemistry. She has been an active member of the Pre-Professional Society for the past two years and aspires to pursue a career in dentistry after graduation. Alongside her studies, Kallie balances multiple roles, including babysitting, teaching swimming lessons, and working as a part-time manager. In her free time, she enjoys bringing her dogs to the park, cooking for loved ones, traveling, and volunteering to teach tumbling in her hometown. Excited to join Dr. Xu’s research lab, Kallie looks forward to expanding her knowledge and skills.',
+  image: kallie, 
+  phone: '', 
+  email: '',
+},
+{
+  name: 'Tyler Borel',
+  role: 'Junior, Biology Major with a Concentration in Medical/Allied Health Science and Chemistry Minor',
+  description: 'Tyler is a junior at the University of Louisiana at Lafayette majoring in Biology with a concentration in Medical/Allied Health Science and a minor in Chemistry. Growing up in southern Louisiana, he developed a deep love for the natural world through hunting, fishing, and exploring unique ecosystems. Tyler’s fascination with the complexities of living organisms drew him to Dr. Xu’s research on protein interactions, particularly protein-drug reactivity, an area with untapped potential in medicine. Aspiring to pursue a career in orthodontics, Tyler is eager to contribute to groundbreaking research while expanding his knowledge and skills in the field.',
+  image: tyler, 
+  phone: '', 
+  email: '',
+}  
 ];
 
 // Former members data
