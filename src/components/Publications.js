@@ -3,6 +3,14 @@ import './Publications.css';
 
 const publicationsData = [
   {
+    title: 'Representing and Quantifying Conformational Changes of Kinases and Phosphatases Using the TSR-Based Algorithm',
+    authors: 'Tarikul I. Milon, Krishna Rauniyar, Sara Furman, ,Khairum H. Orthi, Yingchun Wang, Vijay Raghavan, Wu Xu',
+    conference: 'Kinases and Phosphatases',
+    year: 2025,
+    abstract: 'The main objective of this study is to provide structural insight into conformational changes. We also aim to link TSR-based structural descriptors to their functions. The 3D structures of 2527 kinases and 505 phosphatases are studied. This study results in several major findings as follows: (i) The clustering method yields functionally coherent clusters of kinase and phosphatase families and their superfamilies. (ii) Specific TSR keys are identified as structural signatures for different types of kinases and phosphatases. (iii) TSR keys can identify different conformations of the well-known DFG motif of kinases. (iv) A significant number of phosphatases have their own distinct DFG motifs.',
+    link: 'https://doi.org/10.3390/kinasesphosphatases2040021',
+  },
+  {
     title: 'Development of a novel representation of drug 3D structures and enhancement of the TSR-based method for probing drug and target interactions',
     authors: 'Tarikul I. Milon, Yuhong Wang, Ryan L. Fontenot, Poorya Khajouie, Francois Villinger, Vijay Raghavan, Wu Xu',
     conference: 'Computational Biology and Chemistry',
