@@ -25,7 +25,6 @@ import AminoAcid from './tabs/AminoAcid';
 import CommonKeys from './tabs/CommonKeys';
 import Clustering from './tabs/Clustering';
 import KeyToImage from './tabs/KeyToImage';
-import { Key } from 'lucide-react';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
