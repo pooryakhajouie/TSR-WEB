@@ -22,6 +22,7 @@ import Publications from './components/Publications';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import AminoAcid from './tabs/AminoAcid';
+import CommonKeys from './tabs/CommonKeys';
 import Clustering from './tabs/Clustering';
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
             {/* <Route path="/neudeotide" element={<Neudeotide />} /> */}
             <Route path="/nucleotide-protein" element={<NucleotideProtein />} />
             <Route path="/aminoacid" element={<AminoAcid />} />
+            <Route path="/commonkeys" element={<CommonKeys />} />
             <Route path="/clustering" element={<Clustering />} />
           </Routes>
         </div>
