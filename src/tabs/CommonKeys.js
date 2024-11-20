@@ -19,9 +19,7 @@ const CommonKeys = () => {
                 <section id="abstract" className="section-tsr abstract-section">
                     <h2 className="section-title">Common Keys</h2>
                     <p className="section-paragraph">
-                    </p>
-                    Lets understand common keys calculation with an example.
-                    <p>
+                        Lets understand common keys calculation with an example.
                         A given dataset has two protein classes: X and Y. There are three proteins—X1, X2 and X3—in Class A, whereas there are two proteins—Y1 and Y2—in Class Y. The sets of distinct TSR keys for each protein in the dataset are shown in Figure a. The key occurrences (frequencies) for each protein can be found in Figure b. Figure c shows “Specific” TSR keys of Class X and Class Y and “Common” TSR keys of the dataset. “common” TSR keys for Class X, Class Y and the dataset are illustrated in Figure d, e and f, respectively. “common” keys of the dataset are the intersection between “common” keys of Class X and “common” keys of Class Y. Figure g reveals how “Distinct_Common”, “Total_Common”, “Distinct” and “Total” keys are calculated. “specific” TSR keys for Class X and Class Y are shown in Figure h. “specific” TSR keys of Class X (Y) is a subset of “Specific” TSR keys of Class X (Y).
                     </p>
                     <div className="protein-illustration">

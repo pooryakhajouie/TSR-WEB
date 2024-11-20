@@ -12,6 +12,7 @@ import rhen from '../images/rhen.png';
 import josee from '../images/josee.jpg';
 import kallie from '../images/kallie.png';
 import tyler from '../images/tyler.png';
+import sophia from '../images/sophia.jpg';
 
 const peopleData = [
   {
@@ -92,7 +93,16 @@ const peopleData = [
   image: tyler, 
   phone: '', 
   email: '',
-}  
+},
+{
+  name: 'Sophia LeBlanc',
+  role: 'Junior, Biology Major with Pre-Med Concentration and Minors in Chemistry and Psychology',
+  description: 'Sophia is a junior at UL Lafayette majoring in Biology with a pre-med concentration and pursuing minors in Chemistry and Psychology. She is actively involved in campus organizations, including Alpha Omicron Pi sorority, where she has held leadership roles in recruitment and standards. Sophia also served on the Student Orientation Staff for two years, acting as an orientation leader and a Leadership Team member. With plans to attend medical school after graduating in Fall 2025, she is excited to explore her options and pursue her passion for the medical field.',
+  image: sophia, 
+  phone: '', 
+  email: '',
+}
+
 ];
 
 // Former members data

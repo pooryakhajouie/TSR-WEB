@@ -9,7 +9,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Innovating Protein Structure Analysis</h1>
+          <h1>Innovative Protein Structure Analysis</h1>
           <p>Pioneering computational approaches to quantify structural similarities between proteins.</p>
           <div className="cta-buttons">
             <NavLink to="/tsr">
@@ -61,12 +61,7 @@ const Home = () => {
         <div className="research-buttons">
           <NavLink to="/size-filtering" className="cta-button">Size-Filtering TSR</NavLink>
           <NavLink to="/mirror-image" className="cta-button">Mirror-Image TSR</NavLink>
-          <NavLink to="/metal-ion" className="cta-button">Metal-Ion TSR</NavLink>
-        </div>
-        <div className="research-buttons">
-          <NavLink to="/drug-tsr" className="cta-button">Drug TSR</NavLink>
           <NavLink to="/aa-grouping" className="cta-button">AminoAcid Grouping TSR</NavLink>
-          <NavLink to="/sse-tsr" className="cta-button">SSE-TSR</NavLink>
         </div>
       </section>
 
