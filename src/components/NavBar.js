@@ -99,7 +99,7 @@ const NavBar = () => {
           </ul>
         </li>
 
-        <li><NavLink to="/publications">Our Publications</NavLink></li>
+        <li><NavLink to="/publications">Publications</NavLink></li>
         
         <li className="dropdown">
           <span
