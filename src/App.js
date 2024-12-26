@@ -25,6 +25,8 @@ import AminoAcid from './tabs/AminoAcid';
 import CommonKeys from './tabs/CommonKeys';
 import Clustering from './tabs/Clustering';
 import KeyToImage from './tabs/KeyToImage';
+import Dnn from './tabs/Dnn';
+import SlurmGuide from './tabs/SlurmGuide';
 
 const App = () => {
   const [setActiveTab] = useState('tsr');
@@ -57,7 +59,9 @@ const App = () => {
             <Route path="/aminoacid" element={<AminoAcid />} />
             <Route path="/commonkeys" element={<CommonKeys />} />
             <Route path="/clustering" element={<Clustering />} />
+            <Route path="/dnn" element={<Dnn />} />
             <Route path="/keytoimage" element={<KeyToImage />} />
+            <Route path="/slurm-guide" element={<SlurmGuide />} />
           </Routes>
         </div>
         <Footer />

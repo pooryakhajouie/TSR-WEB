@@ -96,6 +96,7 @@ const NavBar = () => {
           </span>
           <ul className={`dropdown-content ${activeDropdown === 'tsrKeyVisualization' ? 'show' : ''}`}>
             <li><NavLink to="/clustering">Hierarchical Clustering</NavLink></li>
+            <li><NavLink to="/dnn">Deep Neural Network</NavLink></li>
           </ul>
         </li>
 
