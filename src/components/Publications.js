@@ -6,7 +6,7 @@ const publicationsData = [
     title: 'Representing and Quantifying Conformational Changes of Kinases and Phosphatases Using the TSR-Based Algorithm',
     authors: 'Tarikul I. Milon, Krishna Rauniyar, Sara Furman, ,Khairum H. Orthi, Yingchun Wang, Vijay Raghavan, Wu Xu',
     conference: 'Kinases and Phosphatases',
-    year: 2025,
+    year: 2024,
     abstract: 'The main objective of this study is to provide structural insight into conformational changes. We also aim to link TSR-based structural descriptors to their functions. The 3D structures of 2527 kinases and 505 phosphatases are studied. This study results in several major findings as follows: (i) The clustering method yields functionally coherent clusters of kinase and phosphatase families and their superfamilies. (ii) Specific TSR keys are identified as structural signatures for different types of kinases and phosphatases. (iii) TSR keys can identify different conformations of the well-known DFG motif of kinases. (iv) A significant number of phosphatases have their own distinct DFG motifs.',
     link: 'https://doi.org/10.3390/kinasesphosphatases2040021',
   },
@@ -37,7 +37,7 @@ const publicationsData = [
   {
     title: 'A study of a hierarchical structure of proteins and ligand binding sites of receptors using the triangular spatial relationship-based structure comparison method and development of a size-filtering feature designed for comparing different sizes of protein structures',
     authors: 'Sarika Kondra, Feng Chen, Yixin Chen, Yuwu Chen, Caleb J. Collette, Wu Xu',
-    conference: 'Data in Brief',
+    conference: 'Proteins Wiley',
     year: 2021,
     abstract: 'We propose amino-acid scoring matrices that capture “evolutionary closeness” information based on BLOSUM62 matrix, and present the development of a new visualization method where keys are organized according to evolutionary closeness and shown in a 2D image.',
     link: 'https://doi.org/10.1002/prot.26215',
