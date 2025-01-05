@@ -139,6 +139,8 @@
   font-family: 'Courier New', monospace;
   margin-top: 10px;
   margin-bottom: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 code {
