@@ -1,6 +1,9 @@
 /* TSR Page Styling */
 .tsr-method-page {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .toc {
@@ -139,6 +142,8 @@
   font-family: 'Courier New', monospace;
   margin-top: 10px;
   margin-bottom: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 code {
@@ -147,8 +152,68 @@ code {
   font-size: 14px;
 }
 
+.mobile-top-nav {
+  display: none;
+}
+
 /* For responsive design */
 @media screen and (max-width: 768px) {
+
+  .tsr-method-page {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .content-tsr {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .toc {
+    display: none;
+  }
+
+    /* Display the top navigation bar */
+    .mobile-top-nav {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1000;
+    }
+  
+    .mobile-top-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    .mobile-top-nav li {
+      flex: 1;
+    }
+  
+    .mobile-top-nav a {
+      display: block;
+      padding: 14px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+    .mobile-top-nav a:hover {
+      background-color: #111;
+    }
+  
+    /* Add top padding to the body to prevent content from being hidden behind the fixed nav */
+    body {
+      padding-top: 50px; /* Adjust this value based on the height of your nav bar */
+    }
+
   .tutorial-step-item {
     padding-left: 30px;
   }

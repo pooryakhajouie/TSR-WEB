@@ -3,6 +3,22 @@ import './TSR.css';
 import proteinImage from '../images/tsr-method.png';
 
 const AminoAcid = () => {
+  const commandStyle = {
+    marginRight: '10px', // Space between command and comment
+    fontWeight: 'bold'   // Optional: Make the command part bold for clarity
+  };
+
+  const commentStyle = {
+    fontStyle: 'italic',
+    color: '#888'  // Light gray color for the comment
+  };
+
+  // Style for the wrapper to align command and comment
+  const lineStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '8px' // Space between lines
+  };
   return (
     <div className="tsr-method-page">
       <aside className="toc">
@@ -10,11 +26,20 @@ const AminoAcid = () => {
           <ul>
             <li><a href="#abstract">Abstract</a></li>
             <li><a href="#tutorial">Tutorial</a></li>
+            <li><a href="#slurm">Slurm Guide</a></li>
             <li><a href="#source-code">Source Code</a></li>
-            <li><a href="/slurm-guide">Slurm Guide</a></li>
           </ul>
         </nav>
       </aside>
+
+      <nav class="mobile-top-nav">
+        <ul>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#tutorial">Tutorial</a></li>
+          <li><a href="#slurm">Slurm Guide</a></li>
+          <li><a href="#source-code">Source Code</a></li>
+        </ul>
+      </nav>
 
       <div className="content-tsr">
         <section id="abstract" className="section-tsr abstract-section">
@@ -108,7 +133,7 @@ const AminoAcid = () => {
               <br />
               # Retrieve PDB files for the specified PDB IDs<br />
               pdb_ids = ["1GTA", "1GTB", "1LBE"]<br />
-              retrieve_pdb_files(pdb_ids, 'Dataset/')
+              PDB_DL(pdb_ids, 'Dataset/')
             </code>
           </div>
           <p>This command will download the PDB files into the specified <strong>Dataset/</strong> directory. The default directory is also <strong>Dataset/</strong> if not provided.</p>
@@ -164,7 +189,7 @@ const AminoAcid = () => {
               data_dir = "Dataset/"<br />
               pdb_ids = ["1GTA", "1gtb", "1lbe"]<br />
               chain = ["A", "A", "A"]<br />
-              retrieve_pdb_files(pdb_ids, data_dir)<br />
+              PDB_DL(pdb_ids, data_dir)<br />
               <br />
               # Step 2: Generate key files<br />
               AminoAcidProteinTSR(data_dir, pdb_ids, chain=chain, output_option="keys", mirror_image=True) # Modify the output option as desired
@@ -182,8 +207,104 @@ const AminoAcid = () => {
               # Use CSV input for batch processing<br />
               data_dir = "Dataset/"<br />
               csv_file = "sample_details.csv"<br />
-              retrieve_pdb_files(csv_file, data_dir)<br />
+              PDB_DL(pdb_ids, data_dir)<br />
               AminoAcidProteinTSR(data_dir, csv_file, output_option="triplets", mirror_image=True)              </code>
+          </div>
+        </section>
+
+         {/* Slurm Guide Section with New Styles */}
+         <section id="slurm" className="section-tsr tutorial-section">
+          <h2 className="tutorial-title">Slurm Guide</h2>
+
+          <p>A basic Slurm script to submit a job looks like this:</p>
+
+          <h4 className="step-title">Slurm Script</h4>
+          <div className="code-block">
+            <code>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --job-name=my_hpc_job</span>
+                <span style={commentStyle}># Job name</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --output=result.out</span>
+                <span style={commentStyle}># Standard output file</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --error=result.err</span>
+                <span style={commentStyle}># Standard error file</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --ntasks=4</span>
+                <span style={commentStyle}># Number of tasks (e.g., processes)</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --time=01:00:00</span>
+                <span style={commentStyle}># Maximum runtime (HH:MM:SS)</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>#SBATCH --partition=general</span>
+                <span style={commentStyle}># Partition (queue) name</span>
+              </p>
+              <p style={lineStyle}>
+                <span style={commandStyle}>python batch_script.py</span>
+                <span style={commentStyle}># The python script file to run.</span>
+              </p>
+            </code>
+          </div>
+          <h4 className="step-title">Run the batch file</h4>
+          <div className="code-block">
+            <code>
+              sbatch batch_file.sbatch
+            </code>
+          </div>
+          {/* Example Section */}
+          <h3 className="step-title">Examples</h3>
+
+          <h4 className="step-title">Downloading PDB files and generating key triplets using sbatch.</h4>
+          <p>First we need to make a python script file that downloads the pbd files and then generates keys and triplets.</p>
+          <div className="code-block">
+            <code>
+              from aminoacid_tsr_package.PDB_DL import PDB_DL
+              <br />
+              from aminoacid_tsr_package.AminoAcid import AminoAcidProteinTSR
+              <br />
+              <br />
+              # Step 1: Retrieve PDB files<br />
+              data_dir = "Dataset/"<br />
+              pdb_ids = ["1GTA", "1gtb", "1lbe"]<br />
+              chain = ["A", "A", "A"]<br />
+              PDB_DL(pdb_ids, data_dir)<br />
+              <br />
+              # Step 2: Generate key files<br />
+              AminoAcidProteinTSR(data_dir, pdb_ids, chain=chain, output_option="keys", mirror_image=True) # Modify the output option as desired
+            </code>
+
+          </div>
+          <p>Second we need to create an sbatch file that downloads the pbd files and then generates keys and triplets.</p>
+          <div className="code-block">
+            <code>
+              #!/bin/bash<br />
+              #SBATCH -p workq<br />
+              #SBATCH -n 64 <br />
+              #SBATCH -t 72:00:00 <br />
+              #SBATCH -A loni_tsr_4 <br />
+              #SBATCH -N 1 <br />
+              #SBATCH -J pdb <br />
+              #SBATCH -o output_pdb.out <br />
+              #SBATCH -e error_pdb.err <br /><br />
+
+              git clone https://github.com/KrishnaRauniyar/TSR_AMINOACID_PACKAGE.git <br />
+              cd TSR_AMINOACID_PACKAGE <br />
+              python3 -m venv myenv <br />
+              source myenv/bin/activate <br />
+              pip install --upgrade pip <br />
+              pip install -e . <br />
+              pip install -r requirements.txt <br />
+              cd aminoacid_tsr_package
+              <br /><br />
+              python3 (actual path to python script)<br />
+
+            </code>
           </div>
         </section>
 
