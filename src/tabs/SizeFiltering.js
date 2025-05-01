@@ -15,6 +15,15 @@ const SizeFiltering = () => {
           </ul>
         </nav>
       </aside>
+
+      <nav class="mobile-top-nav">
+        <ul>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#learn-more">Learn More</a></li>
+          <li><a href="#tutorial">Tutorial</a></li>
+          <li><a href="#source-code">Source Code</a></li>
+        </ul>
+      </nav>
       
       <div className="content-tsr">
       <section id="abstract" className="section-tsr">
